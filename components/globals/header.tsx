@@ -52,7 +52,7 @@ export const AuthButton = async () => {
                     <p>{user.user.name}</p>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="flex flex-col gap-2 bg-green-100 p-4 border rounded">
                 <DropdownMenuItem>
                     <Link href={"/auth"} className="flex items-center gap-2">
                         <User2 className="size-3" />
