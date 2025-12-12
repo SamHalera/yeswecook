@@ -16,11 +16,48 @@ datasource db {
 model Recipe {
   id        String   @id @default(cuid())
   name      String
+  duration  String?
+  category  Category
+  description String
+  nbOfPersons String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  media Media[]
+  ingregients RecipeIngredient[]
 
 }
+model Ingredient {
+  id    String @id @default(cuid())
+  name  String @unique
+  recipes RecipeIngredient[]
+}
+model RecipeIngredient {
+  recipeId     String
+  ingredientId String
+  quantity     Float
+  unit         String? 
+  recipe       Recipe    @relation(fields: [recipeId], references: [id])
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
 
+  // Composite primary key to avoid duplicates
+  @@id([recipeId, ingredientId])
+}
+
+enum Category {
+  ENTREES
+  PLATS 
+  DESSERTS
+  APERO
+}
+model Media {
+  id Int    @id @default(autoincrement())
+  source    String
+  caption   String?
+  publicId  String
+  recipeId  String
+  isRecipeCover   Boolean
+  recipe  Recipe @relation(fields:  [recipeId], references : [id])
+}
 model User {
   id            String    @id
   name          String

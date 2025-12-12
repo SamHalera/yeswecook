@@ -6,7 +6,7 @@ import { auth } from "@/lib/auth"
 import { headers } from "next/headers"
 import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu"
-import { LogOut, User2 } from "lucide-react"
+import { CookingPot, LogOut, User2 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 export const Header = async () => {
@@ -53,6 +53,18 @@ export const AuthButton = async () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="flex flex-col gap-2 bg-green-100 p-4 border rounded">
+                <DropdownMenuItem>
+                    <Link href={"/admin/recipes"} className="flex items-center gap-2">
+                        <User2 className="size-3" />
+                        Recettes (Admin)
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                    <Link href={"/admin/recipes/new"} className="flex items-center gap-2">
+                        <CookingPot className="size-3" />
+                        Nouvelle Recette (Admin)
+                    </Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>
                     <Link href={"/auth"} className="flex items-center gap-2">
                         <User2 className="size-3" />
