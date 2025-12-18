@@ -1,11 +1,16 @@
 
 import { getIngredients } from "@/actions/recipe/ingredients-action";
-import { getRecipeIngredients } from "@/actions/recipe/recipe-action";
-import { NewRecipeForm } from "@/components/recipe/newRecipeForm";
-import { Ingredient } from "@/src/generated/prisma/client";
+
+import { CreateOrEditRecipeForm } from "@/components/recipe/createOrEditRecipeForm";
+import { getUser } from "@/lib/auth-server";
+import { unauthorized } from "next/navigation";
+
 
 export default async function NewRecipePage() {
 
+    const user = await getUser()
+
+    if (!user) return unauthorized()
     const ingredients = await getIngredients()
     console.log("ingredients in page")
 
@@ -15,7 +20,7 @@ export default async function NewRecipePage() {
 
             <div className="w-2/3 m-auto">
 
-                <NewRecipeForm dataIngredients={ingredients} />
+                <CreateOrEditRecipeForm dataIngredients={ingredients} />
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -11,6 +12,7 @@ export const extractErrorFieldFromErrorsObject = (
   keyToExtract: string
 ) => {
   if (error) {
+    console.log("keyToExtract==>", keyToExtract)
     console.log("error in lib=>", error)
     const errorFounded = error.find((elt) => elt[keyToExtract])
 
@@ -19,3 +21,20 @@ export const extractErrorFieldFromErrorsObject = (
   }
   return null;
 };
+
+export const slugifyName = (name: string) => {
+
+  if (!name || typeof name !== "string") {
+    return
+  }
+
+  return name
+    .toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+

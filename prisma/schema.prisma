@@ -23,18 +23,22 @@ model Recipe {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   media Media[]
-  ingregients RecipeIngredient[]
+  author User @relation(fields: [authorId], references: [id])
+  authorId String
+  ingredients RecipeIngredient[]
+  slug    String @unique
 
 }
 model Ingredient {
   id    String @id @default(cuid())
   name  String @unique
+  // newName  String? @unique
   recipes RecipeIngredient[]
 }
 model RecipeIngredient {
   recipeId     String
   ingredientId String
-  quantity     Float
+  quantity     String
   unit         String? 
   recipe       Recipe    @relation(fields: [recipeId], references: [id])
   ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
@@ -68,6 +72,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
+  recipe        Recipe[]
 
   @@unique([email])
   @@map("user")

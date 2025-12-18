@@ -29,10 +29,13 @@ export const NewRecipeSchema = z.object({
     }).min(1, "La description ne peut pas être vide"),
     ingredients: z
         .array(z.object({
-            ingredientName: z.string(),
-            newName: z.string(),
+            ingredient: z.object({
+                name: z.string().optional().nullable(),
+                newName: z.string().optional().nullable(),
+            }),
             quantity: z.string().refine((val) => !isNaN(parseFloat(val)), { error: "La quantité doit être un nombre" }),
-            unit: z.string().min(1, { error: "Le champs ne peut pas être vide" }),
+            // quantity: z.number().refine((val) => !isNaN(val), { error: "La quantité doit être un nombre" }),
+            unit: z.string().optional().nullable(),
         }))
         .min(1, "Au moins un ingrédient est requis"),
 })

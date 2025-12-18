@@ -9,9 +9,12 @@ import { Button } from "../ui/button"
 import { signIn, signUp } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
+import { Eye, EyeClosed } from "lucide-react"
+import { useState } from "react"
 
 export const SignUpForm = () => {
 
+    const [typeInput, setTypeInput] = useState<string>("password")
     const form = useForm<z.infer<typeof SignUpSchema>>({
         resolver: zodResolver(SignUpSchema),
         defaultValues: {
@@ -78,10 +81,17 @@ export const SignUpForm = () => {
                     control={form.control}
                     name="password"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="relative">
                             <FormLabel>Password</FormLabel>
+                            {typeInput === "password" ? <Eye onClick={() => {
+                                setTypeInput('text')
+                            }} className="absolute right-1 bottom-2 cursor-pointer" /> : <EyeClosed onClick={() => {
+                                setTypeInput('password')
+                            }} className="absolute right-1 bottom-2 cursor-pointer" />}
+
+
                             <FormControl>
-                                <Input type="password" placeholder="" {...field} />
+                                <Input type={typeInput} placeholder="" {...field} />
                             </FormControl>
 
                             <FormMessage />

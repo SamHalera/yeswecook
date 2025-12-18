@@ -24,14 +24,14 @@ export const IngredientFieldRow = ({ register, setValue, field, errors, index, r
     const [inputValue, setInputValue] = useState<string>("")
 
     const quantityFieldError = extractErrorFieldFromErrorsObject(errors, "quantity")
-    const ingredientFieldError = extractErrorFieldFromErrorsObject(errors, "ingredientName")
+    // const ingredientFieldError = extractErrorFieldFromErrorsObject(errors, "ingredientName")
     const unitFieldError = extractErrorFieldFromErrorsObject(errors, "unit")
 
     console.log(quantityFieldError, unitFieldError)
     return (
         <div className="flex flex-col gap-6 bg-gray-50 p-4 relative">
 
-            {ingredientFieldError && <span className=" ml-2 italic text-red-500 text-sm">{ingredientFieldError.message}</span>}
+            {/* {ingredientFieldError && <span className=" ml-2 italic text-red-500 text-sm">{ingredientFieldError.message}</span>} */}
             <div className="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center absolute right-4 top-4">{index + 1}</div>
             <div className="flex gap-4 items-end transition w-2/3 h-32">
                 {!newIngredient ?
@@ -42,7 +42,7 @@ export const IngredientFieldRow = ({ register, setValue, field, errors, index, r
                                 <span className="italic text-muted-foreground">Tu trouves pas ton ingrédient ?</span>
                                 <Button onClick={() => setNewIngredient(!newIngredient)} type="button" className="flex gap-2.5 self-start cursor-pointer text-xs">Ajoutes-le ! <PlusCircle /></Button>
                             </div>
-                            <select {...register(`ingredients.${index}.ingredientName`)} id="ingredientSelect" className="border rounded-sm px-2.5 py-2">
+                            <select {...register(`ingredients.${index}.ingredient.name`)} id="ingredientSelect" className="border rounded-sm px-2.5 py-2">
                                 <option>-- Choisir un ingrédient --</option>
                                 {dataIngredients?.map((ingredient) => {
                                     return (
@@ -60,7 +60,7 @@ export const IngredientFieldRow = ({ register, setValue, field, errors, index, r
                                 <Button onClick={() => setNewIngredient(!newIngredient)} type="button" className="flex gap-2.5 self-start cursor-pointer text-xs">Regarder la liste <ListCheck /></Button>
                             </label>
 
-                            <input {...register(`ingredients.${index}.newName`)} onChange={(e) => {
+                            <input {...register(`ingredients.${index}.ingredient.newName`)} onChange={(e) => {
                                 setInputValue(e.target.value)
                             }} type="text" id="newIngredient" placeholder="votre nouvel ingrédient" className="border rounded-sm px-2.5 py-2" />
                             {/* <input  {...register(`ingredients.${index}.newName`)} type="hidden" /> */}

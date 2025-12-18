@@ -6,12 +6,13 @@ import { SubmitHandler, useFieldArray, useForm } from "react-hook-form"
 import z from "zod"
 import { Button } from "../ui/button"
 import { PlusIcon } from "lucide-react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { IngredientFieldRow } from "./ingredientFieldRow"
 import { NewRecipeFormType, NewRecipeSchema } from "@/lib/zod/recipeSchema"
-import { createNewRecipeAction } from "@/actions/recipe/recipe-action"
+import { createNewRecipeAction, updateRecipe } from "@/actions/recipe/recipe-action"
 
-type NewRecipeProps = {
+
+export type NewRecipeProps = {
     dataIngredients: {
         name: string;
         id: string;
@@ -25,7 +26,15 @@ type NewRecipeProps = {
 //     category: 'plats',
 //     ingredients: []
 // }
-export const NewRecipeForm = ({ dataIngredients }: NewRecipeProps) => {
+export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, setIsEditMode }: {
+    recipe?: RecipeProps,
+    dataIngredients: {
+        name: string;
+        id: string;
+    }[] | undefined,
+    isEditMode: boolean,
+    setIsEditMode: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
 
 
     const [inputDisable, setInputDisable] = useState<boolean>(false)
@@ -34,12 +43,12 @@ export const NewRecipeForm = ({ dataIngredients }: NewRecipeProps) => {
     const { register, setValue, handleSubmit, control, formState: { isDirty, errors } } = useForm<NewRecipeFormType>({
         resolver: zodResolver(NewRecipeSchema),
         defaultValues: {
-            name: "",
-            duration: "",
-            description: "",
-            nbOfPersons: "4",
-            category: 'PLATS',
-            ingredients: []
+            name: recipe?.name ?? "",
+            duration: recipe?.duration ?? "",
+            description: recipe?.description ?? "",
+            nbOfPersons: recipe?.nbOfPersons ?? "4",
+            category: recipe?.category ?? 'PLATS',
+            ingredients: recipe?.ingredients ?? []
         }
     })
 
@@ -60,9 +69,19 @@ export const NewRecipeForm = ({ dataIngredients }: NewRecipeProps) => {
 
         try {
             console.log("here")
-            const recipeCreation = await createNewRecipeAction(values)
-            console.log("recipeCreation==>", recipeCreation)
-            router.push('/admin/recipes')
+            if (recipe) {
+                console.log("edit recipe")
+                const update = await updateRecipe(values, recipe.id)
+                if (update?.status === "success") {
+                    setIsEditMode(!isEditMode)
+                    router.push(`/admin/recipes/${update.recipeUpdated.slug}`)
+                }
+            } else {
+
+                const recipeCreation = await createNewRecipeAction(values)
+                console.log("recipeCreation==>", recipeCreation)
+                router.push('/admin/recipes')
+            }
         } catch (error) {
             console.error('error=>', error)
         }
@@ -70,14 +89,16 @@ export const NewRecipeForm = ({ dataIngredients }: NewRecipeProps) => {
 
 
     const fieldInit = {
-        ingredientName: "",
-        newName: "",
+        ingredient: {
+            name: "",
+            newName: "",
+        },
         quantity: "0",
         unit: "",
     }
     console.log("errors==>", errors)
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-lg mx-auto">
             <div className="flex gap-4 w-full">
                 <div className="flex flex-col gap-2 flex-1">
                     <div>
@@ -129,7 +150,7 @@ export const NewRecipeForm = ({ dataIngredients }: NewRecipeProps) => {
                 <h3 className="text-xl font-bold">Vos Ingredients</h3>
                 {ingredientsError && <span className="text-red-500 ml-2 italic text-sm">{ingredientsError}</span>}
                 {fields.map((field, index) => {
-
+                    console.log("field==>", field)
                     const errorsIngredients = Array.isArray(errors.ingredients) ? errors.ingredients : null
                     return <IngredientFieldRow
                         key={field.id}

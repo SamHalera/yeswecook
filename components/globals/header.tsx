@@ -73,14 +73,14 @@ export const AuthButton = async () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                     <form action="">
-                        <button className="flex items-center gap-2 w-full" formAction={async () => {
+                        <button className="flex items-center gap-2 w-full" onClick={async () => {
                             "use server"
 
                             await auth.api.signOut({
                                 headers: await headers()
                             });
 
-                            redirect("/auth/signin")
+                            redirect("/auth/sign-in")
 
                         }}>
                             <LogOut className="size-4 mr-2" />
