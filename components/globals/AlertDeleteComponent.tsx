@@ -4,8 +4,10 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from "../ui/button"
 
 import { useRouter } from "next/navigation"
+import { deleteRecipe } from "@/actions/recipe/recipe-action"
+import { toast } from "sonner"
 
-export const AlertDeleteComponent = ({ elementName, deleteAction }: { elementName: string, deleteAction: () => void }) => {
+export const AlertDeleteComponent = ({ elementName, recipeId, authorId }: { elementName: string, recipeId: string, authorId: string }) => {
 
     const router = useRouter()
     return (
@@ -24,11 +26,14 @@ export const AlertDeleteComponent = ({ elementName, deleteAction }: { elementNam
                     <AlertDialogCancel>Annuler</AlertDialogCancel>
                     <AlertDialogAction onClick={async () => {
 
-                        try {
-                            await deleteAction()
+                        const deleteAction = await deleteRecipe(recipeId, authorId)
+
+                        if (deleteAction?.status === "success") {
+                            toast.success(deleteAction?.message)
                             router.push('/admin/recipes')
-                        } catch (error) {
-                            console.log('error==>', error)
+                        } else {
+                            toast.error(deleteAction?.message)
+                            console.log('error==>', deleteAction?.message)
                         }
                     }}>Continuer</AlertDialogAction>
                 </AlertDialogFooter>

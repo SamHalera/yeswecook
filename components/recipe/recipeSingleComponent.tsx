@@ -34,7 +34,7 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
             </CardContent>
             <CardFooter className="flex justify-between gap-2 w-full">
                 <Button onClick={() => setIsEditMode(!isEditMode)} className="bg-green-300"><PencilIcon /> Modifier</Button>
-                <AlertDeleteComponent elementName="recette" deleteAction={deleteRecipe.bind(null, recipe.id, recipe.authorId)} />
+                <AlertDeleteComponent elementName="recette" recipeId={recipe.id} authorId={recipe.authorId} />
             </CardFooter>
         </Card>
     ) : (

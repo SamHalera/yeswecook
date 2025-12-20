@@ -11,6 +11,9 @@ import { IngredientFieldRow } from "./ingredientFieldRow"
 import { NewRecipeFormType, NewRecipeSchema } from "@/lib/zod/recipeSchema"
 import { createNewRecipeAction, updateRecipe } from "@/actions/recipe/recipe-action"
 
+import { toast } from "sonner"
+
+
 
 export type NewRecipeProps = {
     dataIngredients: {
@@ -19,13 +22,6 @@ export type NewRecipeProps = {
     }[] | undefined
 }
 
-// export type NewRecipeFormType = {
-//     name: "",
-//     duration: "" | undefined,
-//     description: "",
-//     category: 'plats',
-//     ingredients: []
-// }
 export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, setIsEditMode }: {
     recipe?: RecipeProps,
     dataIngredients: {
@@ -74,13 +70,20 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
                 const update = await updateRecipe(values, recipe.id)
                 if (update?.status === "success") {
                     setIsEditMode(!isEditMode)
-                    router.push(`/admin/recipes/${update.recipeUpdated.slug}`)
+                    toast.success(update.message)
+                    router.push(`/admin/recipes/${update.slug}`)
+                } else if (update?.status === "error") {
+                    toast.error(update?.message)
                 }
             } else {
 
-                const recipeCreation = await createNewRecipeAction(values)
-                console.log("recipeCreation==>", recipeCreation)
-                router.push('/admin/recipes')
+                const creation = await createNewRecipeAction(values)
+                if (creation?.status === "success") {
+                    toast.success(creation?.message)
+                    router.push('/admin/recipes')
+                } else {
+                    toast.error(creation?.message)
+                }
             }
         } catch (error) {
             console.error('error=>', error)

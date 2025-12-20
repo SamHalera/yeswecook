@@ -73,10 +73,11 @@ export const createNewRecipeAction = async (values: NewRecipeFormType) => {
         })
 
         console.log("new reciper==>", recipe)
-        return { success: "Success" }
+        return { status: "success", message: "La recette a bien été crée !" }
         //create recipeIngredint
     } catch (error) {
         console.error('error=>', error)
+        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !" }
     }
 }
 
@@ -140,10 +141,10 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
             })
         })
 
-        return { status: "success", recipeUpdated }
+        return { status: "success", slug: recipeUpdated.slug, message: `La recette "${recipeUpdated.name}" a bien été modifiée !` }
     } catch (error) {
         console.error("Failed to update recipe:", error);
-        throw new Error("Recipe update failed. No data was modified.");
+        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !" }
     }
 
 }
@@ -198,14 +199,15 @@ export const deleteRecipe = async (id: string, authorId: string) => {
                 recipeId: id
             }
         })
-        await prisma.recipe.delete({
+        const recipeDeleted = await prisma.recipe.delete({
             where: {
                 id
             }
         })
-
+        return { status: "success", message: `La recette "${recipeDeleted.name}" a bien été modifiée !` }
     } catch (error) {
         console.log("error==>", error)
+        return { status: "error", message: "Oups ! Une erreur est survenue lors de la supression de la recette !" }
     }
 }
 
