@@ -8,6 +8,7 @@ import { Recipe } from "@/src/generated/prisma/client"
 import { AlarmClockIcon, CookingPot, PencilIcon, Users2Icon } from "lucide-react"
 import { useState } from "react"
 import { CreateOrEditRecipeForm } from "./createOrEditRecipeForm"
+import { useEditor } from "@tiptap/react"
 export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
     recipe: RecipeProps, dataIngredients: {
         name: string;
@@ -15,6 +16,7 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
     }[] | undefined
 }) => {
     const [isEditMode, setIsEditMode] = useState<boolean>(false)
+
     console.log("isEditMode==>", isEditMode)
     console.log('recipe==>', recipe)
     return !isEditMode ? (
@@ -28,9 +30,7 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
                     <span className="flex items-center gap-2"><Users2Icon />{recipe?.nbOfPersons}</span>
                     <span className="flex items-center gap-2"><AlarmClockIcon />{recipe?.duration}</span>
                 </div>
-                <div>
-                    <p>{recipe?.description}</p>
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: recipe?.description }} />
             </CardContent>
             <CardFooter className="flex justify-between gap-2 w-full">
                 <Button onClick={() => setIsEditMode(!isEditMode)} className="bg-green-300"><PencilIcon /> Modifier</Button>
