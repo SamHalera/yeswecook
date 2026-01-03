@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation"
-import { SubmitHandler, useFieldArray, useForm } from "react-hook-form"
+import { Controller, SubmitHandler, useFieldArray, useForm } from "react-hook-form"
 import z from "zod"
 import { Button } from "../ui/button"
 import { PlusIcon } from "lucide-react"
@@ -12,6 +12,8 @@ import { NewRecipeFormType, NewRecipeSchema } from "@/lib/zod/recipeSchema"
 import { createNewRecipeAction, updateRecipe } from "@/actions/recipe/recipe-action"
 
 import { toast } from "sonner"
+import Tiptap from "../rich-text-editor/tipTap"
+
 
 
 
@@ -100,8 +102,12 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
         unit: "",
     }
     console.log("errors==>", errors)
+
+    const onChangeRichText = (richText: string) => {
+        console.log("richText==>", richText)
+    }
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-lg mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-lg mx-auto my-5">
             <div className="flex gap-4 w-full">
                 <div className="flex flex-col gap-2 flex-1">
                     <div>
@@ -124,7 +130,18 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
                     <label htmlFor="description">Description </label>
                     {descriptionError && <span className="text-red-500 ml-2 italic text-sm">{descriptionError}</span>}
                 </div>
-                <textarea {...register("description")} id="description" placeholder="Décrivrez toutes les étapes" className="border rounded-sm px-2.5 py-2" rows={8} />
+                <Controller
+                    name="description"
+                    control={control}
+                    rules={{ required: 'Content is required' }}
+                    render={({ field }) => (
+                        <Tiptap value={field.value}
+                            onChange={field.onChange} />
+
+                    )}
+                />
+
+                {/* <textarea {...register("description")} id="description" placeholder="Décrivrez toutes les étapes" className="border rounded-sm px-2.5 py-2" rows={8} /> */}
 
             </div>
             <div className="flex gap-4 w-full">
