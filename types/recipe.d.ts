@@ -1,7 +1,8 @@
-type RecipeProps = {
-    name: string;
+interface RecipeBase {
     id: string;
-    duration: string | null;
+    name: string;
+    durationPrep: string | null;
+    durationCook: string | null;
     category: Category;
     description: string;
     nbOfPersons: string;
@@ -9,6 +10,8 @@ type RecipeProps = {
     updatedAt: Date;
     slug: string;
     authorId: string,
+}
+interface RecipeProps extends RecipeBase {
     ingredients: {
         name?: string | undefined;
         newName?: string | undefined;
@@ -16,3 +19,11 @@ type RecipeProps = {
         unit?: string | null;
     }[]
 }
+interface RecipeItemProps extends RecipeBase {
+    author: {
+        name: string
+        email: string
+        image: string | null
+    }
+}
+

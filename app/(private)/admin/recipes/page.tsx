@@ -1,4 +1,5 @@
 import { getAllRecipesByUser } from "@/actions/recipe/recipe-action"
+import { RecipesList } from "@/components/publicRecipe/recipesList"
 import { RecipesListComponent } from "@/components/recipe/recipesListComponent"
 import { getUser } from "@/lib/auth-server"
 import { unauthorized } from "next/navigation"
@@ -13,10 +14,10 @@ export default async function AllRecipesPage() {
     const allRecipes = await getAllRecipesByUser()
 
     return (
-        <div>
+        <div className="w-full">
             <h2>My Recipes</h2>
 
-            {allRecipes && <RecipesListComponent recipes={allRecipes} />}
+            {allRecipes && <RecipesList recipes={allRecipes} currentUser={user} categoryProps={""} />}
         </div>
     )
 }

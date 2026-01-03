@@ -14,7 +14,7 @@ export const createNewRecipeAction = async (values: NewRecipeFormType) => {
     if (!user) return
     try {
         console.log("values from form==>", values)
-        const { name, duration, nbOfPersons, category, description, ingredients } = values
+        const { name, durationPrep, durationCook, nbOfPersons, category, description, ingredients } = values
         const slug = slugifyName(name) ?? ""
         /**
          * values from form==> {
@@ -33,7 +33,8 @@ export const createNewRecipeAction = async (values: NewRecipeFormType) => {
         const recipe = await prisma.recipe.create({
             data: {
                 name,
-                duration,
+                durationPrep,
+                durationCook,
                 category: category as keyof typeof Category,
                 description,
                 nbOfPersons,
@@ -85,7 +86,7 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
     console.log("values from form==>", values)
     const user = await getUser()
     if (!user) return
-    const { name, duration, nbOfPersons, category, description, ingredients } = values
+    const { name, durationPrep, durationCook, nbOfPersons, category, description, ingredients } = values
     const slug = slugifyName(values.name) ?? ""
 
     try {
@@ -100,7 +101,8 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
                 },
                 data: {
                     ...(name && { name }),
-                    ...(duration && { duration }),
+                    ...(durationPrep && { durationPrep }),
+                    ...(durationCook && { durationCook }),
                     ...(category && { category: category as keyof typeof Category }),
                     ...(description && { description }),
                     ...(nbOfPersons && { nbOfPersons }),
@@ -148,6 +150,7 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
     }
 
 }
+
 export const getRecipeIngredients = async () => {
     try {
         const recipeIngredients = await prisma.recipeIngredient.findMany({
@@ -161,7 +164,17 @@ export const getRecipeIngredients = async () => {
 
 export const getAllRecipes = async () => {
     try {
-        const allRecipes = await prisma.recipe.findMany()
+        const allRecipes = await prisma.recipe.findMany({
+            include: {
+                author: {
+                    select: {
+                        name: true,
+                        email: true,
+                        image: true
+                    }
+                }
+            }
+        })
 
         return allRecipes
 
@@ -178,6 +191,15 @@ export const getAllRecipesByUser = async () => {
         const allRecipes = await prisma.recipe.findMany({
             where: {
                 authorId: user?.id
+            },
+            include: {
+                author: {
+                    select: {
+                        name: true,
+                        email: true,
+                        image: true
+                    }
+                }
             }
         })
 
@@ -189,6 +211,32 @@ export const getAllRecipesByUser = async () => {
     }
 }
 
+export const getRecipeBySlug = async (slug: string) => {
+    try {
+        const recipe = await prisma.recipe.findUnique({
+            where: {
+                slug
+            },
+            include: {
+                author: {
+                    select: {
+                        name: true,
+                        email: true,
+                        image: true
+                    }
+                },
+                ingredients: {
+                    include: {
+                        ingredient: true
+                    }
+                }
+            }
+        })
+        return recipe
+    } catch (error) {
+        console.log("error==>", error)
+    }
+}
 export const deleteRecipe = async (id: string, authorId: string) => {
     const user = await getUser()
     if (!user) return
@@ -210,48 +258,3 @@ export const deleteRecipe = async (id: string, authorId: string) => {
         return { status: "error", message: "Oups ! Une erreur est survenue lors de la supression de la recette !" }
     }
 }
-
-
-
-
-
-// const recipe = await prisma.recipe.update({
-//     where: {
-//         id: recipeId
-//     },
-//     data: {
-//         // ...(item.ingredient.name && { name: item.ingredient.name })
-//         ...(name && { name }),
-//         ...(duration && { duration }),
-//         ...(category && { category: category as keyof typeof Category }),
-//         ...(description && { description }),
-//         ...(nbOfPersons && { nbOfPersons }),
-//         ...(slug && { slug }),
-//         authorId: user.id,
-//         ingredients: {
-//             deleteMany: {}, // Supprime toutes les relations existantes
-//             create: ingredients.map((item) => ({
-//                 quantity: item.quantity.toString(),
-//                 unit: item.unit,
-//                 ingredient: {
-//                     connectOrCreate: {
-//                         where: {
-//                             name: item.ingredient.name
-//                         },
-//                         create: {
-//                             name: item.ingredient.newName || item.ingredient.name
-//                         }
-//                     }
-//                 }
-//             }))
-//         },
-//     },
-//     include: {
-//         ingredients: {
-//             include: {
-//                 ingredient: true
-//             }
-//         },
-//         author: true
-//     }
-// })

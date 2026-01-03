@@ -5,7 +5,7 @@ import { AlertDeleteComponent } from "@/components/globals/AlertDeleteComponent"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Recipe } from "@/src/generated/prisma/client"
-import { AlarmClockIcon, CookingPot, PencilIcon, Users2Icon } from "lucide-react"
+import { AlarmClockCheckIcon, AlarmClockIcon, CookingPot, PencilIcon, Users2Icon } from "lucide-react"
 import { useState } from "react"
 import { CreateOrEditRecipeForm } from "./createOrEditRecipeForm"
 import { useEditor } from "@tiptap/react"
@@ -25,10 +25,13 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
                 <CardTitle className="text-center">{recipe?.name}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-5 items-center">
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 items-center">
                     <span className="flex items-center gap-2"><CookingPot />{recipe?.category}</span>
                     <span className="flex items-center gap-2"><Users2Icon />{recipe?.nbOfPersons}</span>
-                    <span className="flex items-center gap-2"><AlarmClockIcon />{recipe?.duration}</span>
+
+                    <span className="flex items-center gap-2"><AlarmClockIcon />preparation : {recipe?.durationPrep}</span>
+                    <span className="flex items-center gap-2"><AlarmClockCheckIcon />cuisson : {recipe?.durationCook}</span>
+
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: recipe?.description }} />
             </CardContent>

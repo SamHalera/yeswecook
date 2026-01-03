@@ -19,7 +19,8 @@ export const NewRecipeSchema = z.object({
             message: "Le nom est obligatoire",
         })
         .min(1, "Le nom ne peut pas être vide"),
-    duration: z.string().optional(),
+    durationPrep: z.string().optional(),
+    durationCook: z.string().optional(),
     nbOfPersons: z.string().refine((val) => !isNaN(parseFloat(val)), { error: "La quantité doit être un nombre" }),
     category: z.enum(Category, {
         error: "La catégorie est obligatoire",

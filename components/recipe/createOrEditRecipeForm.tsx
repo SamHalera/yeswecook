@@ -42,7 +42,8 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
         resolver: zodResolver(NewRecipeSchema),
         defaultValues: {
             name: recipe?.name ?? "",
-            duration: recipe?.duration ?? "",
+            durationPrep: recipe?.durationPrep ?? "",
+            durationCook: recipe?.durationCook ?? "",
             description: recipe?.description ?? "",
             nbOfPersons: recipe?.nbOfPersons ?? "4",
             category: recipe?.category ?? 'PLATS',
@@ -55,7 +56,8 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
     const nbOfPersonsError = errors.nbOfPersons?.message
     const descriptionError = errors.description?.message
     const categoryError = errors.category?.message
-    const durationError = errors.duration?.message
+    const durationPrepError = errors.durationPrep?.message
+    const durationCookError = errors.durationCook?.message
     const ingredientsError = errors.ingredients?.message
 
     const { fields, append, remove } = useFieldArray({
@@ -103,9 +105,9 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
     }
     console.log("errors==>", errors)
 
-    const onChangeRichText = (richText: string) => {
-        console.log("richText==>", richText)
-    }
+    // const onChangeRichText = (richText: string) => {
+    //     console.log("richText==>", richText)
+    // }
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-lg mx-auto my-5">
             <div className="flex gap-4 w-full">
@@ -147,24 +149,31 @@ export const CreateOrEditRecipeForm = ({ recipe, dataIngredients, isEditMode, se
             <div className="flex gap-4 w-full">
                 <div className="flex flex-col gap-2 flex-1">
                     <div>
-                        <label htmlFor="duration">Durée</label>
-                        {durationError && <span className="text-red-500 ml-2 italic text-sm">{durationError}</span>}
+                        <label htmlFor="durationPrep">Temps de préparation</label>
+                        {durationPrepError && <span className="text-red-500 ml-2 italic text-sm">{durationPrepError}</span>}
                     </div>
-                    <input {...register("duration")} type="text" id="duration" placeholder="Quel durée pour votre recette?" className="border rounded-sm px-2.5 py-2" />
+                    <input {...register("durationPrep")} type="text" id="durationPrep" placeholder="Quel durée de préparation pour votre recette?" className="border rounded-sm px-2.5 py-2" />
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
                     <div>
-                        <label htmlFor="category">Catégorie</label>
-                        {categoryError && <span className="text-red-500 ml-2 italic text-sm">{categoryError}</span>}
+                        <label htmlFor="durationCook">Temps de cuisson</label>
+                        {durationCookError && <span className="text-red-500 ml-2 italic text-sm">{durationCookError}</span>}
                     </div>
-                    <select {...register("category")} id="category" className="border rounded-sm px-2.5 py-2" >
-                        <option value="">-- Choisir une Catégorie --</option>
-                        <option value="ENTREES">Entrée</option>
-                        <option value="PLATS">Plat</option>
-                        <option value="DESSERTS">Dessert</option>
-                        <option value="APERO">Apéro</option>
-                    </select>
+                    <input {...register("durationCook")} type="text" id="durationCook" placeholder="Quel durée de cuisson pour votre recette?" className="border rounded-sm px-2.5 py-2" />
                 </div>
+            </div>
+            <div className="flex flex-col gap-2 flex-1">
+                <div>
+                    <label htmlFor="category">Catégorie</label>
+                    {categoryError && <span className="text-red-500 ml-2 italic text-sm">{categoryError}</span>}
+                </div>
+                <select {...register("category")} id="category" className="border rounded-sm px-2.5 py-2" >
+                    <option value="">-- Choisir une Catégorie --</option>
+                    <option value="ENTREES">Entrée</option>
+                    <option value="PLATS">Plat</option>
+                    <option value="DESSERTS">Dessert</option>
+                    <option value="APERO">Apéro</option>
+                </select>
             </div>
             <div className="flex flex-col gap-4 w-full border p-3.5 rounded-sm">
                 <h3 className="text-xl font-bold">Vos Ingredients</h3>

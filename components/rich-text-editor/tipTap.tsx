@@ -36,7 +36,6 @@ const Tiptap = ({ onChange, value }: {
         },
         onUpdate({ editor }) {
             onChange(editor.getHTML())
-            console.log("text==>", editor.getHTML())
         },
         // Don't render immediately on the server to avoid SSR issues
         immediatelyRender: false,

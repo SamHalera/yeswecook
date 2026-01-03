@@ -16,7 +16,8 @@ datasource db {
 model Recipe {
   id        String   @id @default(cuid())
   name      String
-  duration  String?
+  durationPrep  String?
+  durationCook  String?
   category  Category
   description String
   nbOfPersons String
