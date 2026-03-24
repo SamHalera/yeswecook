@@ -24,7 +24,8 @@ export default async function RecipePage({ params }: { params: Promise<{ slug: s
                 include: {
                     ingredient: true
                 }
-            }
+            },
+            media: true
         }
     })
     const ingredients = await getIngredients()

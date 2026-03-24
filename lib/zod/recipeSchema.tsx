@@ -42,3 +42,14 @@ export const NewRecipeSchema = z.object({
 })
 
 export type NewRecipeFormType = z.infer<typeof NewRecipeSchema>;
+
+export const MediaRecipeSchema = z.object({
+    media: z.array(z.object({
+        source: z.string(),
+        caption: z.string().optional().nullable(),
+        isRecipeCover: z.boolean(),
+        publicId: z.string()
+    }))
+})
+
+export type MediaRecipeFormType = z.infer<typeof MediaRecipeSchema>;

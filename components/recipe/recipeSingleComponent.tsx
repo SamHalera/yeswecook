@@ -9,6 +9,7 @@ import { AlarmClockCheckIcon, AlarmClockIcon, CookingPot, PencilIcon, Users2Icon
 import { useState } from "react"
 import { CreateOrEditRecipeForm } from "./createOrEditRecipeForm"
 import { useEditor } from "@tiptap/react"
+import { RecipeProps } from "@/types/recipe"
 export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
     recipe: RecipeProps, dataIngredients: {
         name: string;
