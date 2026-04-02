@@ -1,3 +1,5 @@
+import { Media } from "@/src/generated/prisma/client";
+
 interface RecipeBase {
     id: string;
     name: string;
@@ -10,6 +12,7 @@ interface RecipeBase {
     updatedAt: Date;
     slug: string;
     authorId: string,
+    media: RecipeMediaProps[]
 }
 interface RecipeProps extends RecipeBase {
     ingredients: {
@@ -25,5 +28,12 @@ interface RecipeItemProps extends RecipeBase {
         email: string
         image: string | null
     }
+}
+
+type RecipeMediaProps = {
+    source: string,
+    publicId: string
+    isRecipeCover: boolean
+    caption?: string | null
 }
 

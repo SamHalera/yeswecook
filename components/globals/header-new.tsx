@@ -1,37 +1,55 @@
 import { getSession } from "@/lib/auth-server"
 import Link from "next/link"
-import { redirect } from "next/navigation"
-import { auth } from "@/lib/auth"
-import { headers } from "next/headers"
+
 import { Button, buttonVariants } from "../ui/button"
 import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu"
 import { CookingPot, LogOut, User2 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { headers } from "next/headers"
+import { redirect } from "next/navigation"
+import { auth } from "@/lib/auth"
 
-export const Header = async () => {
+
+export const HeaderNew = async () => {
 
     const user = await getSession()
-
     return (
-        <header className="flex items-center justify-between h-32 px-7 py-7 bg-gray-300 text-black">
-            <Link href={"/"} className="text-3xl">YesWeCook</Link>
-            <nav>
-                <ul className="flex gap-6 items-center">
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"/"}>Home</Link></li>
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"/entrees"}>Entrées</Link></li>
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"/plats"}>Plats</Link></li>
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"/desserts"}>Dessers</Link></li>
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"/aperos"}>Apéros</Link></li>
-                    <li className="text-green-600 hover:text-green-700 transition"><Link href={"blog"}>Blog</Link></li>
-                </ul>
-            </nav>
-            {!user ? <div className="flex gap-3">
-                <Link href={"/auth/sign-in"} className="text-green-600 hover:text-green-700 transition">Sign In</Link>
-                <Link href={"/auth/sign-up"} className="text-green-600 hover:text-green-700 transition">Sign Up</Link>
-            </div> : <AuthButton />}
+        <nav
+            className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+                <div className="flex items-center gap-10">
+                    <Link href={"/"}
+                        className="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight font-headline">YesWeCook</Link>
+                    <div className="hidden md:flex items-center gap-8">
+                        <Link className="text-slate-500 dark:text-slate-400 font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+                            href="/">Home</Link>
+                        {user && <Link href={"/admin/recipes"} className="text-slate-500 dark:text-slate-400 font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+                        >My Recipe Book</Link>}
 
-        </header>
+                        <Link className="text-slate-900 dark:text-white border-b-2 border-green-600 font-bold pb-1" href="#">Explore Recipes</Link>
+                        <Link className="text-slate-500 dark:text-slate-400 font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+                            href="#">Community</Link>
+
+                    </div>
+                </div>
+                {!user ? <div className="flex gap-3">
+                    <Link href={"/auth/sign-in"} className="text-green-600 hover:text-green-700 transition">Sign In</Link>
+                    <Link href={"/auth/sign-up"} className="text-green-600 hover:text-green-700 transition">Sign Up</Link>
+                </div> : <div className="flex items-center gap-3">
+                    <button
+                        className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300 transition-all active:scale-95">
+                        <span className="material-symbols-outlined">notifications</span>
+                    </button>
+                    <button
+                        className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300 transition-all active:scale-95">
+                        <span className="material-symbols-outlined">favorite</span>
+                    </button>
+                    <AuthButton />
+                </div>}
+
+            </div>
+        </nav>
     )
 }
 

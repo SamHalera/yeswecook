@@ -4,12 +4,15 @@ import prisma from "@/lib/prisma"
 import { slugifyName } from "@/lib/utils"
 import { NewRecipeFormType } from "@/lib/zod/recipeSchema"
 import { Category } from "@/src/generated/prisma/enums"
-import { ca } from "zod/v4/locales"
+import { RecipeMediaProps } from "@/types/recipe"
+import { create } from "domain"
+import { connect } from "http2"
+import { ca, fa, tr } from "zod/v4/locales"
 
 
 
 
-export const createNewRecipeAction = async (values: NewRecipeFormType) => {
+export const createNewRecipeAction = async (values: NewRecipeFormType, media: RecipeMediaProps | undefined) => {
     const user = await getUser()
     if (!user) return
     try {
@@ -30,6 +33,8 @@ export const createNewRecipeAction = async (values: NewRecipeFormType) => {
             ]
             }
          */
+
+        const mediaToAdd = [media && media]
         const recipe = await prisma.recipe.create({
             data: {
                 name,
@@ -72,6 +77,17 @@ export const createNewRecipeAction = async (values: NewRecipeFormType) => {
                 author: true
             }
         })
+
+        if (recipe && media) {
+            await prisma.media.create({
+                data: {
+                    source: media.source,
+                    publicId: media.publicId,
+                    isRecipeCover: media.isRecipeCover,
+                    recipeId: recipe.id,
+                }
+            })
+        }
 
         console.log("new reciper==>", recipe)
         return { status: "success", message: "La recette a bien été crée !" }
@@ -151,6 +167,46 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
 
 }
 
+export const persistRecipeMediaGallery = async (media: RecipeMediaProps[], recipeId: string) => {
+    try {
+        console.log("media form persistRecipeMediaGallery==>", media)
+        const isNewCover = media.find(elt => elt.isRecipeCover)
+        console.log("isNewCover==>", isNewCover)
+        const previousRecipeCover = await prisma.media.findFirst({
+            where: {
+                recipeId,
+                isRecipeCover: true
+            }
+        })
+
+        await prisma.media.createMany({
+            data: media.map((elt) => {
+                console.log("elt==>", elt)
+                return {
+                    source: elt.source,
+                    publicId: elt.publicId,
+                    isRecipeCover: elt.isRecipeCover,
+                    recipeId
+                }
+            })
+        })
+        if (isNewCover && previousRecipeCover) {
+            //update old recipe Cover
+            console.log("previousRecipeCover==>", previousRecipeCover)
+            await prisma.media.update({
+                where: {
+                    id: previousRecipeCover.id
+                },
+                data: {
+                    isRecipeCover: false
+                }
+            })
+        }
+        return { status: "success" }
+    } catch (error) {
+        console.error('error creating media gallery for recipe==>', error)
+    }
+}
 export const getRecipeIngredients = async () => {
     try {
         const recipeIngredients = await prisma.recipeIngredient.findMany({

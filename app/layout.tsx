@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Epilogue, Manrope } from "next/font/google";
+
 import "./globals.css"
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/globals/header";
 import { Toaster } from "@/components/ui/sonner";
+import { HeaderNew } from "@/components/globals/header-new";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +16,15 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const epilogue = Epilogue({
+  subsets: ['latin'],
+  variable: '--font-headline',
+})
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-body',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,11 +39,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(geistSans.variable, geistMono.variable, "antialiased", "h-full ")}
+
+        className={cn(epilogue.variable, manrope.variable, "antialiased", "h-full bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container")}
       >
-        <Header />
+        <HeaderNew />
         <Toaster richColors />
-        <main className="flex min-h-screen w-full  flex-col items-center justify-between px-7 dark:bg-black sm:items-start">
+        <main className="max-w-7xl mx-auto px-6 pt-16">
 
           {children}
         </main>
