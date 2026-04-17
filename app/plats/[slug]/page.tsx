@@ -1,11 +1,8 @@
 import { getRecipeBySlug } from "@/actions/recipe/recipe-action"
 import SingleRecipeContent from "@/components/publicRecipe/singleRecipeContent"
-import { SingleRecipePage } from "@/components/publicRecipe/singleRecipePage"
 import { getUser } from "@/lib/auth-server"
-import prisma from "@/lib/prisma"
 import { RecipeProps } from "@/types/recipe"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
+
 
 export default async function SinglePlatPage({ params }: { params: Promise<{ slug: string }> }) {
 
@@ -26,7 +23,6 @@ export default async function SinglePlatPage({ params }: { params: Promise<{ slu
     }
     return (
 
-        // <SingleRecipePage recipe={recipe} />
         <SingleRecipeContent currentUser={currentUser} recipe={mappedRecipe} />
 
     )
