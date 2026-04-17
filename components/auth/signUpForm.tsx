@@ -27,7 +27,6 @@ export const SignUpForm = () => {
     const router = useRouter()
 
     const onSubmit = async (values: z.infer<typeof SignUpSchema>) => {
-        console.log("values from form==>", values)
         await signUp.email(
             {
                 name: values.name,

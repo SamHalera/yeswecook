@@ -2,7 +2,6 @@
 import { motion } from 'motion/react';
 import Link from 'next/link';
 export function Hero({ isAuthentified }: { isAuthentified: boolean }) {
-    console.log("isAuthentified==>", isAuthentified)
     const pathToStart = isAuthentified ? '/admin/recipes/new' : '/auth/sign-in'
     return (
         <section className="max-w-7xl mx-auto px-8 py-16 flex flex-col lg:flex-row items-center gap-12 overflow-hidden">

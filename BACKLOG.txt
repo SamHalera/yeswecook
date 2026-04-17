@@ -16,3 +16,12 @@ ACCOUNT :
     - Notifications --> ?
     - Privacy --> ?
     - Préférences --> ?
+
+FEATURES : 
+- BLOG
+- SETUP NOTIFICATIONS
+- SETUP Privacy
+- SETUP Preferences
+- SEARCH RECIPE (FILTERS AND TAG)
+- RECIPE FAVORITE
+- RECIPE INSTRUCTIONS FROM TEXT TO STEPS (each step has max 3 photos)

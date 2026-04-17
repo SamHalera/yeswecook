@@ -7,7 +7,6 @@ import { Newsletter } from "./newsletterSection"
 
 
 export const HomePageComponent = ({ user }: { user: UserProps | null }) => {
-    console.log(user)
     const isAuthentified = user !== undefined
     return (
         <>

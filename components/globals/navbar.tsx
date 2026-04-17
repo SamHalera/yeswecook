@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { Button, buttonVariants } from "../ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu"
-// import { DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { CookingPot, LogOut, User2 } from "lucide-react"
 import { auth } from "@/lib/auth"
@@ -115,8 +114,6 @@ export const AuthButton = async () => {
                         await auth.api.signOut({
                             headers: await headers()
                         });
-                        console.log("REDIRECT");
-
                         redirect("/")
                     }}>
                         <button type="submit" className="flex items-center gap-2 w-full">

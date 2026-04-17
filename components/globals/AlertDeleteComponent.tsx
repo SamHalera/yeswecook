@@ -33,7 +33,6 @@ export const AlertDeleteComponent = ({ elementName, recipeId, authorId }: { elem
                             router.push('/admin/recipes')
                         } else {
                             toast.error(deleteAction?.message)
-                            console.log('error==>', deleteAction?.message)
                         }
                     }}>Continuer</AlertDialogAction>
                 </AlertDialogFooter>

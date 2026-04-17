@@ -34,9 +34,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
 
 
     const onSubmit = async (values: z.infer<typeof ProfileFormSchema>) => {
-        console.log("values from form==>", values)
-
-
         const { data, error } = await authClient.updateUser({
             name: values.name,
             bio: values.bio,
@@ -45,7 +42,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                 imageSrc: dataImage.imageSrc,
                 image: dataImage.imageSrc
             })
-
         })
 
         if (user?.email !== values.email) {
@@ -62,7 +58,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                 }
             }, 700)
         }
-        console.log("data==>", data)
         if (error) {
             toast.error(error.message)
         } else if (data.status === true) {
@@ -99,7 +94,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                         <CldUploadWidget
                             uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_USER_PRESET}
                             onSuccessAction={(result: any) => {
-                                console.log("result onsuccess upload=+>", result)
                                 const userImage = {
                                     imageSrc: result?.info?.secure_url,
                                     imagePublicId: result?.info.public_id,

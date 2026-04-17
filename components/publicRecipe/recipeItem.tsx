@@ -7,7 +7,6 @@ import { RecipeItemProps } from "@/types/recipe"
 
 export const RecipeItem = ({ recipe, isCurrentUserAuthor }: { recipe: RecipeItemProps, isCurrentUserAuthor: boolean }) => {
     const path = usePathname()
-    console.log("path", path)
 
     const currentPath = path === "/" ? `/${recipe.category.toLowerCase()}` : path
     return (

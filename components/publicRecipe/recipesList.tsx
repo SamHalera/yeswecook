@@ -11,14 +11,11 @@ export const RecipesList = ({ recipes, currentUser, categoryProps }: { recipes: 
 
     const [categoryState, setCategoryState] = useState<string>(categoryProps)
     const [searchValue, setSearchValue] = useState<string>("")
-
-    // console.log("recipes==>", recipes)
     return (
         <div className="w-full flex flex-col gap-8">
             {categoryProps === "" && <div className="flex flex-col gap-2 self-center">
                 <label htmlFor="category">Filtre par catégorie</label>
                 <select onChange={(e) => {
-                    console.log(e.target.value)
                     setCategoryState(e.target.value)
                 }} name="category" id="categroy" className="border border-gray-300 p-3 rounded">
                     <option value="">toutes catégories</option>

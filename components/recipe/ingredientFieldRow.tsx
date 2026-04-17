@@ -39,10 +39,6 @@ export const IngredientFieldRow = ({ register, setValue, field, errors, index, r
     // const ingredientFieldError = extractErrorFieldFromErrorsObject(errors, "ingredientName")
     const unityFieldError = extractErrorFieldFromErrorsObject(errors, "unity")
 
-    console.log(quantityFieldError, unityFieldError)
-
-    console.log("field=+>", field);
-
     return (
 
         <div className="flex flex-col w-full gap-6 bg-gray-50 p-4 border-b">

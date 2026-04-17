@@ -12,11 +12,8 @@ export const extractErrorFieldFromErrorsObject = (
   keyToExtract: string
 ) => {
   if (error) {
-    console.log("keyToExtract==>", keyToExtract)
-    console.log("error in lib=>", error)
     const errorFounded = error.find((elt) => elt[keyToExtract])
 
-    // console.log("error in libs==>", errorFounded[keyToExtract])
     if (errorFounded) return errorFounded[keyToExtract]
   }
   return null;

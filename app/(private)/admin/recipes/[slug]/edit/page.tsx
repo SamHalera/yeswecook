@@ -44,7 +44,6 @@ export default async function RecipeEdit({ params }: { params: Promise<{ slug: s
         }
     }
     const ingredients = await getIngredients()
-    console.log("ingredients in page")
 
     return (
         <div className=" flex flex-col grow pt-10 pb-24 px-6 max-w-5xl mx-auto w-full">

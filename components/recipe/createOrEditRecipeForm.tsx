@@ -92,11 +92,8 @@ export const CreateOrEditRecipeForm = (
 
     })
     const onSubmit: SubmitHandler<NewRecipeFormType> = async (values: z.infer<typeof NewRecipeSchema>) => {
-
         try {
-            console.log("onSubmit")
             if (recipe) {
-                console.log("edit recipe")
                 const update = await updateRecipe(values, recipe.id)
                 if (update?.status === "success") {
                     setIsEditMode(!isEditMode)
@@ -106,7 +103,6 @@ export const CreateOrEditRecipeForm = (
                     toast.error(update?.message)
                 }
             } else {
-                console.log("CRETAION==>", values)
                 const creation = await createNewRecipeAction(values, dataImage)
                 if (creation?.status === "success") {
                     toast.success(creation?.message)
@@ -129,7 +125,6 @@ export const CreateOrEditRecipeForm = (
         quantity: "0",
         unity: "",
     }
-    console.log("errors==>", errors)
 
     return (
         <div className="flex flex-col gap-7 w-full">
@@ -234,7 +229,6 @@ export const CreateOrEditRecipeForm = (
                         <AnimatePresence initial={false}>
                             {ingredientsError && <span className="text-red-500 ml-2 italic text-sm">{ingredientsError}</span>}
                             {fields.map((field, index) => {
-                                console.log("field==>", field)
                                 const errorsIngredients = Array.isArray(errors.ingredients) ? errors.ingredients : null
                                 return <motion.div
                                     key={field.id}
@@ -292,7 +286,6 @@ export const CreateOrEditRecipeForm = (
                     <CldUploadWidget
                         uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_RECIP_PRESET}
                         onSuccessAction={(result: any) => {
-                            console.log("result onsuccess upload=+>", result)
                             const media = {
                                 source: result?.info?.secure_url,
                                 publicId: result?.info.public_id,

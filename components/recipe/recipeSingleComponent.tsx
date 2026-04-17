@@ -18,8 +18,6 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
 }) => {
     const [isEditMode, setIsEditMode] = useState<boolean>(false)
 
-    console.log("isEditMode==>", isEditMode)
-    console.log('recipe==>', recipe)
     return !isEditMode ? (
         <Card className="w-full max-w-lg mx-auto">
             <CardHeader>
