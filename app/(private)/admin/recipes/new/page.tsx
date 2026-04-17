@@ -2,6 +2,7 @@
 import { getIngredients } from "@/actions/recipe/ingredients-action";
 
 import { CreateOrEditRecipeForm } from "@/components/recipe/createOrEditRecipeForm";
+import { HeadLineComponent } from "@/components/recipe/headLineComponent";
 import { getUser } from "@/lib/auth-server";
 import { unauthorized } from "next/navigation";
 
@@ -15,10 +16,10 @@ export default async function NewRecipePage() {
     console.log("ingredients in page")
 
     return (
-        <div className="w-full flex flex-col gap-7">
-            <h2 className="text-center">New Recipe</h2>
+        <div className="grow pt-10 pb-24 px-6 max-w-5xl mx-auto w-full">
+            <HeadLineComponent isEditMode={false} />
 
-            <div className="w-2/3 m-auto">
+            <div className="m-auto">
 
                 <CreateOrEditRecipeForm dataIngredients={ingredients} />
             </div>

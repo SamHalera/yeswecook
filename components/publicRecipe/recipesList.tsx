@@ -4,12 +4,15 @@ import { useState } from "react"
 import { RecipeItem } from "./recipeItem"
 import { usePathname } from "next/navigation"
 import { SearchBarComponent } from "./searchBarComponent"
+import { RecipeItemProps } from "@/types/recipe"
 
-export const RecipesList = ({ recipes, currentUser, categoryProps }: { recipes: RecipeItemProps[] | undefined, currentUser: UserProps, categoryProps: string }) => {
+export const RecipesList = ({ recipes, currentUser, categoryProps }: { recipes: RecipeItemProps[] | undefined, currentUser: UserProps | null, categoryProps: string }) => {
 
 
     const [categoryState, setCategoryState] = useState<string>(categoryProps)
     const [searchValue, setSearchValue] = useState<string>("")
+
+    // console.log("recipes==>", recipes)
     return (
         <div className="w-full flex flex-col gap-8">
             {categoryProps === "" && <div className="flex flex-col gap-2 self-center">

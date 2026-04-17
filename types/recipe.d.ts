@@ -12,14 +12,17 @@ interface RecipeBase {
     updatedAt: Date;
     slug: string;
     authorId: string,
-    media: RecipeMediaProps[]
+    cover: RecipeMediaProps | null
+    isPublic: boolean
 }
 interface RecipeProps extends RecipeBase {
     ingredients: {
-        name?: string | undefined;
-        newName?: string | undefined;
-        quantity?: string | undefined;
-        unit?: string | null;
+        ingredient: {
+            name?: string | null;
+            newName?: string | null;
+        };
+        quantity: string;
+        unity: string;
     }[]
 }
 interface RecipeItemProps extends RecipeBase {
@@ -33,7 +36,6 @@ interface RecipeItemProps extends RecipeBase {
 type RecipeMediaProps = {
     source: string,
     publicId: string
-    isRecipeCover: boolean
     caption?: string | null
 }
 

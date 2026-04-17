@@ -13,7 +13,7 @@ export const AlertDeleteComponent = ({ elementName, recipeId, authorId }: { elem
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button className="bg-red-300" variant="outline"><Trash2 />Supprimer</Button>
+                <Button className="bg-red-400 w-full py-5  text-white hover:text-red-200 hover:bg-red-600 cursor-pointer font-headline font-extrabold rounded-md  transition-all active:scale-95" variant="outline"><Trash2 />Supprimer</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>

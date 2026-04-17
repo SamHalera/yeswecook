@@ -21,6 +21,7 @@ export const NewRecipeSchema = z.object({
         .min(1, "Le nom ne peut pas être vide"),
     durationPrep: z.string().optional(),
     durationCook: z.string().optional(),
+    isPublic: z.boolean(),
     nbOfPersons: z.string().refine((val) => !isNaN(parseFloat(val)), { error: "La quantité doit être un nombre" }),
     category: z.enum(Category, {
         error: "La catégorie est obligatoire",
@@ -36,7 +37,7 @@ export const NewRecipeSchema = z.object({
             }),
             quantity: z.string().refine((val) => !isNaN(parseFloat(val)), { error: "La quantité doit être un nombre" }),
             // quantity: z.number().refine((val) => !isNaN(val), { error: "La quantité doit être un nombre" }),
-            unit: z.string().optional().nullable(),
+            unity: z.string(),
         }))
         .min(1, "Au moins un ingrédient est requis"),
 })
@@ -44,12 +45,12 @@ export const NewRecipeSchema = z.object({
 export type NewRecipeFormType = z.infer<typeof NewRecipeSchema>;
 
 export const MediaRecipeSchema = z.object({
-    media: z.array(z.object({
+    media: z.object({
         source: z.string(),
         caption: z.string().optional().nullable(),
         isRecipeCover: z.boolean(),
         publicId: z.string()
-    }))
+    })
 })
 
 export type MediaRecipeFormType = z.infer<typeof MediaRecipeSchema>;

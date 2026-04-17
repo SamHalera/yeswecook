@@ -1,7 +1,8 @@
 "use server"
 
 import { getAllRecipes } from "@/actions/recipe/recipe-action";
-import { HomePageComponent } from "@/components/homePage";
+import { HomePageComponent } from "@/components/home/homePage";
+
 import { RecipeItem } from "@/components/publicRecipe/recipeItem";
 import { RecipesList } from "@/components/publicRecipe/recipesList";
 import { getUser } from "@/lib/auth-server";

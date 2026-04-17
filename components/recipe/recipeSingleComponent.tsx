@@ -42,6 +42,6 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
             </CardFooter>
         </Card>
     ) : (
-        <CreateOrEditRecipeForm dataIngredients={dataIngredients} recipe={recipe} isEditMode={isEditMode} setIsEditMode={setIsEditMode} />
+        <CreateOrEditRecipeForm dataIngredients={dataIngredients} recipe={recipe} />
     )
 }

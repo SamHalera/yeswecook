@@ -82,7 +82,7 @@ export const SignInForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Valider</Button>
+                <Button type="submit" className=" cursor-pointer mt-4 text-white bg-primary hover:bg-primary-container hover:text-on-secondary-fixed editorial-shadow w-full font-headline font-bold py-5 rounded-lg transition-all transform active:scale-[0.98]">Valider</Button>
             </form>
 
         </Form>
