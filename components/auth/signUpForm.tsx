@@ -36,7 +36,7 @@ export const SignUpForm = () => {
             },
             {
                 onSuccess: () => {
-                    router.push('/auth')
+                    router.push('/admin/recipes')
                     router.refresh()
                 },
                 onError: (error) => {

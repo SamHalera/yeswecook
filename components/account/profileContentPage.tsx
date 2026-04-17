@@ -35,7 +35,7 @@ export default function ProfileContentPage({ user }: { user: UserProps }) {
                     {active === "Profile" && <ProfileForm user={user} />}
                     {active === "Privacy" && <PrivacyForm user={user} />}
                     {active === "Notifications" && <NotificationsForm user={user} />}
-                    {active === "Preferences" && <PreferencesForm user={user} />}
+                    {active === "Préfèrences" && <PreferencesForm user={user} />}
 
 
                 </motion.div>

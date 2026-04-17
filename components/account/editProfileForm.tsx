@@ -21,6 +21,7 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
 
     const userDataImage = { imagePublicId: user?.imagePublicId, imageSrc: user?.imageSrc }
     const [dataImage, setDataImage] = useState<userMediaProps | null>(userDataImage ?? null);
+    const router = useRouter()
     const form = useForm<z.infer<typeof ProfileFormSchema>>({
         resolver: zodResolver(ProfileFormSchema),
         defaultValues: {
@@ -67,6 +68,7 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
         } else if (data.status === true) {
             toast.success(`Hello ${user?.name} ! Ton profile a bien été mis à jour`)
         }
+        router.refresh()
 
     }
     return (

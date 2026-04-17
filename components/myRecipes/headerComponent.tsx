@@ -1,5 +1,9 @@
-import { Edit3 } from 'lucide-react';
+"use client"
+import { Edit3, Pencil } from 'lucide-react';
 import { motion } from 'motion/react';
+import { CldImage, CldUploadWidget } from 'next-cloudinary';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 const avatar = "https://lh3.googleusercontent.com/aida-public/AB6AXuBWca-3b5zO39YPa6ll7x18rQQGd5EsyzKoUhJpxt-tFBW4LJUggcE4JFLJV4wnGXGTu6PivQv-_CmicGOxJJwWRN9eEI3YIGS9Z94aXF_lNBDIyR33NCwB9e0wPuddBwZiYrH2UdkvChXOujDXs7u8enlj7ym8M4vIl96yGQ4tCZCARVQr0OYWWlxeO7fr9MjySBrSllQKgj5tW6mvgE1u_bKvtv2UX4qcKNlmCVqtI2N7ZzM4HpKnqPCRxJq7-toM9XZ-nmnKHw";
 export default function HeaderComponent({ currentUser }: { currentUser: UserProps }) {
     const userStats = {
@@ -7,6 +11,7 @@ export default function HeaderComponent({ currentUser }: { currentUser: UserProp
         publicCount: 18,
         privateCount: 24
     }
+    const router = useRouter()
     return (
         <header className="relative mb-16 flex flex-col md:flex-row items-center md:items-end space-y-8 md:space-y-0 md:space-x-12">
             <motion.div
@@ -15,14 +20,26 @@ export default function HeaderComponent({ currentUser }: { currentUser: UserProp
                 className="relative"
             >
                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-surface-container-highest shadow-xl">
-                    <img
+                    {currentUser?.image ? <CldImage
+                        src={currentUser.image}
+                        alt={"Image de profil"}
+                        width="450"
+                        height="450"
+                        crop="fill"
+                        sizes="100vw"
+                        className="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-surface-container-highest shadow-xl"
+                    /> : <Image
+                        width={160}
+                        height={160}
                         src={avatar}
-                        alt={currentUser?.name}
+                        alt={"Image de profile de l'utilisateur"}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
-                    />
+                    />}
+
+
                 </div>
-                <button className="absolute bottom-2 right-2 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
+                <button onClick={() => router.push('/account')} className="cursor-pointer absolute bottom-2 right-2 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
                     <Edit3 size={16} />
                 </button>
             </motion.div>
@@ -52,7 +69,7 @@ export default function HeaderComponent({ currentUser }: { currentUser: UserProp
             </div>
 
             <div className="flex items-center space-x-3">
-                <button className="bg-surface-container-high text-on-surface px-6 py-3 rounded-lg font-bold font-label hover:bg-surface-container-highest transition-colors">
+                <button onClick={() => router.push('/account')} className="cursor-pointer bg-surface-container-high text-on-surface px-6 py-3 rounded-lg font-bold font-label hover:bg-surface-container-highest transition-colors">
                     Edit Profile
                 </button>
             </div>

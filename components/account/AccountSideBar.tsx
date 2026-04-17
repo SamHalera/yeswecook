@@ -10,7 +10,7 @@ export default function AccountSideBar({ active, setActive }: { active: string, 
         { name: 'Profile', icon: User },
         { name: 'Privacy', icon: Lock },
         { name: 'Notifications', icon: Bell },
-        { name: 'Preferences', icon: Settings },
+        { name: 'Préfèrences', icon: Settings },
     ];
 
     return (

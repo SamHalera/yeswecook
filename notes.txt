@@ -8,7 +8,11 @@ SIGNUP --> OK
 MY RECIPES --> OK
 
 CRUD RECETTE --> OK
-ACCOUNT 
 CATEGORY RECIPES PAGE
 PAGE UNAUTHORIZED --> OK
 PAGE 404 --> OK
+ACCOUNT :
+    - Profile --> OK
+    - Notifications --> ?
+    - Privacy --> ?
+    - Préférences --> ?
