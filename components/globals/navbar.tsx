@@ -14,6 +14,7 @@ import { redirect } from "next/navigation"
 
 import { NavLinks } from "./navLinks"
 import { log } from "console"
+import Image from "next/image"
 
 
 
@@ -56,8 +57,6 @@ export const Navbar = async ({ currentUrl, user }: { currentUrl: string | null, 
 
 export const AuthButton = async () => {
     const user = await getUser()
-    console.log("user in header", user);
-
     if (!user) {
         return <Link href={"/auth/signin"} className={buttonVariants({ size: "sm", variant: "outline" })}>Sign in</Link>
     }
@@ -71,7 +70,10 @@ export const AuthButton = async () => {
                             :
                             <div
                                 className="w-12 h-12 rounded-full overflow-hidden bg-slate-200 ml-2 border border-slate-200 cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all">
-                                <img alt="User profile avatar"
+                                <Image
+                                    width={48}
+                                    height={48}
+                                    alt="User profile avatar"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPkhifIfhBBuHivQRe_cFl4UIkZKQIOXWlgUW2xfSKGKJc4MSCGlN_iG1sOYfOCPE8iJ5KEhUFtd7YudCInOXwkUh4wZ_K34mKuPEy_egCdjJEPD1PGxNm6ODwviXYwFuB8c_6aSTM8Cvxy8P5mTE1U5em8su8DrumbxYmka6DxF0Ej3f7DSINuYVlfwsn1-b2j2_fiaBkWCUJiWKYFcCho_QR6HnD3HxFKl_WSvFJi96JGSTq5LfDbvWNse9BXiGnD6JSKXZmaw" />
                             </div>
                         }
