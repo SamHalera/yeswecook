@@ -1,0 +1,18 @@
+MAQUETTES : 
+HOME --> OK
+EXPLORE RECIPES ---> OK
+ONE RECIPE --> OK
+COMMUNITY --> OK
+SIGNIN --> OK
+SIGNUP --> OK
+MY RECIPES --> OK
+
+CRUD RECETTE --> OK
+CATEGORY RECIPES PAGE
+PAGE UNAUTHORIZED --> OK
+PAGE 404 --> OK
+ACCOUNT :
+    - Profile --> OK
+    - Notifications --> ?
+    - Privacy --> ?
+    - Préférences --> ?

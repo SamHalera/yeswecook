@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -41,6 +42,37 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-headline: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-headline: "Epilogue", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #a43700;
+  --color-primary-container: #cd4700;
+  --color-surface: #f4faff;
+  --color-surface-dim: #cfdce4;
+  --color-on-surface-variant: #5a4138;
+  --color-surface-container-low: #e9f6fd;
+  --color-surface-container-lowest: #ffffff;
+   --color-surface-container: #e3f0f8;
+  --color-surface-container-high: #ddeaf2;
+  --color-surface-container-highest: #d7e4ec;
+  --color-on-surface: #111d23;
+  --color-on-surface-variant: #5a4138;
+  --color-outline-variant: #e3bfb2;
+    --color-outline: #8f7066;
+  --color-outline-variant: #e3bfb2;
+  --color-secondary-fixed-dim: #ffb954;
+  --color-on-secondary-fixed: #291800;
+  --color-surface-container-low: #e9f6fd;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-3xl: 1.5rem;
+
+  --shadow-editorial: 0 20px 40px rgba(17, 29, 37, 0.06);
+   --shadow-paper: 0 20px 40px rgba(17, 29, 37, 0.06);
 }
 
 :root {
@@ -117,8 +149,11 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
+  /* body {
     @apply bg-background text-foreground;
+  } */
+  body {
+    @apply bg-surface font-body text-on-surface antialiased;
   }
 
   h1 {
@@ -132,11 +167,13 @@
   h3 {
     @apply text-lg font-bold;
   }
+
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     display: inline-block;
     line-height: 1;
   }
+  
 
   /* ul{
     @apply list-disc ml-4
@@ -144,6 +181,24 @@
   ol{
     @apply list-decimal ml-4
   } */
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl bg-white/70 sticky top-0 z-50;
+}
+
+.braise-gradient {
+  @apply bg-linear-to-br from-[#a43700] to-[#cd4700];
+}
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+}
+.glass-nav {
+  @apply backdrop-blur-xl bg-white/70;
+}
+
+.paper-shadow {
+  box-shadow: var(--shadow-paper);
 }
 @layer utilities {
   .editorial-shadow {
@@ -154,4 +209,3 @@
     background: linear-gradient(135deg, #4CAF50 0%, #81c784 100%);
   }
 }
-

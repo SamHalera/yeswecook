@@ -3,6 +3,7 @@ import { AlarmClockCheckIcon, AlarmClockIcon, CookingPot, Users2Icon } from "luc
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { RecipeItemProps } from "@/types/recipe"
 
 export const RecipeItem = ({ recipe, isCurrentUserAuthor }: { recipe: RecipeItemProps, isCurrentUserAuthor: boolean }) => {
     const path = usePathname()

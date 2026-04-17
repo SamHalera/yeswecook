@@ -36,7 +36,7 @@ export const SignUpForm = () => {
             },
             {
                 onSuccess: () => {
-                    router.push('/auth')
+                    router.push('/admin/recipes')
                     router.refresh()
                 },
                 onError: (error) => {
@@ -98,7 +98,7 @@ export const SignUpForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Valider</Button>
+                <Button type="submit" className=" cursor-pointer mt-4 text-white bg-primary hover:bg-primary-container hover:text-on-secondary-fixed editorial-shadow w-full font-headline font-bold py-5 rounded-lg transition-all transform active:scale-[0.98]">Valider</Button>
             </form>
 
         </Form>

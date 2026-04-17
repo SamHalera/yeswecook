@@ -1,0 +1,5 @@
+{
+  "name": "YesWeCook",
+  "description": "The Living Cookbook - Eat well without making life complicated. Curate your private collection and discover platform-tested recipes.",
+  "requestFramePermissions": []
+}

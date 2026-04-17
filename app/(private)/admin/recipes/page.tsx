@@ -1,8 +1,11 @@
 import { getAllRecipesByUser } from "@/actions/recipe/recipe-action"
+import MyRecipesComponent from "@/components/myRecipes/myRecipesComponent"
+import MyRecipes from "@/components/myRecipes/myRecipesComponent"
 import { RecipesList } from "@/components/publicRecipe/recipesList"
 import { RecipesListComponent } from "@/components/recipe/recipesListComponent"
 import { getUser } from "@/lib/auth-server"
 import { unauthorized } from "next/navigation"
+
 
 export default async function AllRecipesPage() {
 
@@ -15,9 +18,9 @@ export default async function AllRecipesPage() {
 
     return (
         <div className="w-full">
-            <h2>My Recipes</h2>
 
-            {allRecipes && <RecipesList recipes={allRecipes} currentUser={user} categoryProps={""} />}
+            <MyRecipesComponent allRecipes={allRecipes} currentUser={user} />
+            {/* {allRecipes && <RecipesList recipes={allRecipes} currentUser={user} categoryProps={""} />} */}
         </div>
     )
 }

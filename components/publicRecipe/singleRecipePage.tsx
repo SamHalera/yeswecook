@@ -1,4 +1,5 @@
 "use client"
+import { RecipeProps } from "@/types/recipe"
 import { AlarmClockCheckIcon, AlarmClockIcon, ArrowLeft, CookingPot, Users2Icon } from "lucide-react"
 import Link from "next/link"
 
