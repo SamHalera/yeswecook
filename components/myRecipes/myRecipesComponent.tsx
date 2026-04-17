@@ -1,21 +1,11 @@
 "use client"
-import { motion } from 'motion/react';
 import {
-    Bell,
-    UserCircle,
-    Edit3,
-    Search,
-    Filter,
-    Globe,
-    Lock,
     BookOpen,
     Plus,
-    MoreHorizontal
 } from 'lucide-react';
-import { useState, ReactNode } from 'react';
-import { RecipeBase, RecipeItemProps } from '@/types/recipe';
+import { useState } from 'react';
+import { RecipeBase } from '@/types/recipe';
 import { MyRecipeCard } from './myRecipecard';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import HeaderComponent from './headerComponent';
 import FiltersComponent from './filtersComponent';

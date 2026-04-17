@@ -66,7 +66,7 @@ const STEPS = [
     }
 ];
 
-export default function SingleRecipeContent({ currentUser, recipe }: { currentUser: UserProps | null; recipe: RecipeProps }) {
+export default function SingleRecipeContent({ currentUser, recipe }: { currentUser: UserProps | null, recipe: RecipeProps }) {
     const [isSaved, setIsSaved] = useState(false);
 
     return (

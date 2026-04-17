@@ -4,11 +4,11 @@ import { AlertDeleteComponent } from "@/components/globals/AlertDeleteComponent"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Recipe } from "@/src/generated/prisma/client"
+
 import { AlarmClockCheckIcon, AlarmClockIcon, CookingPot, PencilIcon, Users2Icon } from "lucide-react"
 import { useState } from "react"
 import { CreateOrEditRecipeForm } from "./createOrEditRecipeForm"
-import { useEditor } from "@tiptap/react"
+
 import { RecipeProps } from "@/types/recipe"
 export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
     recipe: RecipeProps, dataIngredients: {

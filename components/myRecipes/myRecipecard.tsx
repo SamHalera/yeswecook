@@ -1,18 +1,11 @@
 import { motion } from 'motion/react';
 import {
-    Bell,
-    UserCircle,
     Edit3,
-    Search,
-    Filter,
     Globe,
     Lock,
-    BookOpen,
-    Plus,
     MoreHorizontal
 } from 'lucide-react';
-import { useState, ReactNode } from 'react';
-import { RecipeBase, RecipeItemProps } from '@/types/recipe';
+import { RecipeBase } from '@/types/recipe';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 export const MyRecipeCard = ({ recipe, index }: { recipe: RecipeBase, index: number }) => {
