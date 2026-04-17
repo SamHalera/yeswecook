@@ -87,10 +87,11 @@ export const AuthButton = async () => {
                             "use server"
 
                             await auth.api.signOut({
-                                headers: await headers()
+                                headers: await headers(),
                             });
 
-                            redirect("/auth/sign-in")
+                            console.log("ReDIRECT")
+                            redirect("/")
 
                         }}>
                             <LogOut className="size-4 mr-2" />

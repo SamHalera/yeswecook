@@ -8,7 +8,7 @@ type UserProps = {
     image?: string | null | undefined;
     imageSrc?: string | null | undefined;
     imagePublicId?: string | null | undefined;
-    bio: string
+    bio?: string | null
 } | undefined
 
 type userMediaProps = {

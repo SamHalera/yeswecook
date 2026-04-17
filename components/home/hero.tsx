@@ -1,6 +1,9 @@
 "use client"
 import { motion } from 'motion/react';
-export function Hero() {
+import Link from 'next/link';
+export function Hero({ isAuthentified }: { isAuthentified: boolean }) {
+    console.log("isAuthentified==>", isAuthentified)
+    const pathToStart = isAuthentified ? '/admin/recipes/new' : '/auth/sign-in'
     return (
         <section className="max-w-7xl mx-auto px-8 py-16 flex flex-col lg:flex-row items-center gap-12 overflow-hidden">
             <motion.div
@@ -17,12 +20,12 @@ export function Hero() {
                     Your personal recipe book for a modern life. Curate your private collection, share gems with the community, and discover platform-tested recipes designed for real kitchens.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                    <button className="braise-gradient text-white px-8 py-4 rounded-lg font-bold shadow-editorial transition-all hover:scale-105 active:scale-95">
+                    <Link href={"/admin/recipes/new"} className="braise-gradient text-white px-8 py-4 rounded-lg font-bold shadow-editorial transition-all hover:scale-105 active:scale-95">
                         Start Your Book
-                    </button>
-                    <button className="bg-surface-container-low text-on-surface px-8 py-4 rounded-lg font-bold transition-all hover:bg-surface-dim active:scale-95">
+                    </Link>
+                    <Link href={"/community"} className="bg-surface-container-low text-on-surface px-8 py-4 rounded-lg font-bold transition-all hover:bg-surface-dim active:scale-95">
                         Explore Community
-                    </button>
+                    </Link>
                 </div>
             </motion.div>
             <div className="lg:w-1/2 relative">

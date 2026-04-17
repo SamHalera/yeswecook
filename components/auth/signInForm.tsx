@@ -7,7 +7,7 @@ import { Input } from "../ui/input"
 import { useForm } from "react-hook-form"
 import { Button } from "../ui/button"
 import { signIn } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { toast } from "sonner"
 import { Eye, EyeClosed } from "lucide-react"
 import { useState } from "react"
@@ -15,6 +15,11 @@ import { useState } from "react"
 export const SignInForm = () => {
 
     const [typeInput, setTypeInput] = useState<string>("password")
+    const router = useRouter()
+    const searchParams = useSearchParams()
+    const prevURL = searchParams.get('prevURL')
+    console.log("prevURL", prevURL)
+    const redirectPath = prevURL ? `/${prevURL}` : '/admin/recipes'
     const form = useForm<z.infer<typeof SignInSchema>>({
         resolver: zodResolver(SignInSchema),
         defaultValues: {
@@ -22,8 +27,6 @@ export const SignInForm = () => {
             password: ""
         }
     })
-
-    const router = useRouter()
 
     const onSubmit = async (values: z.infer<typeof SignInSchema>) => {
         console.log("values from form==>", values)
@@ -34,7 +37,7 @@ export const SignInForm = () => {
             },
             {
                 onSuccess: () => {
-                    router.push('/admin/recipes')
+                    router.push(redirectPath)
                     router.refresh()
                 },
                 onError: (error) => {

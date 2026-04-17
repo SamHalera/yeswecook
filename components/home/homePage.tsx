@@ -5,11 +5,13 @@ import { RecipeSection } from "./recipeSection"
 import { CommunitySection } from "./communitySection"
 import { Newsletter } from "./newsletterSection"
 
-export const HomePageComponent = () => {
 
+export const HomePageComponent = ({ user }: { user: UserProps | null }) => {
+    console.log(user)
+    const isAuthentified = user !== undefined
     return (
         <>
-            <Hero />
+            <Hero isAuthentified={isAuthentified} />
             <PantrySearch />
             <RecipeSection />
             <CommunitySection />

@@ -4,14 +4,14 @@ import { getIngredients } from "@/actions/recipe/ingredients-action";
 import { CreateOrEditRecipeForm } from "@/components/recipe/createOrEditRecipeForm";
 import { HeadLineComponent } from "@/components/recipe/headLineComponent";
 import { getUser } from "@/lib/auth-server";
-import { unauthorized } from "next/navigation";
+import { redirect, unauthorized } from "next/navigation";
 
 
 export default async function NewRecipePage() {
 
     const user = await getUser()
 
-    if (!user) return unauthorized()
+    if (!user) redirect(`/auth/sign-in?prevURL=${"admin/recipes/new"}`)
     const ingredients = await getIngredients()
     console.log("ingredients in page")
 

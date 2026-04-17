@@ -15,6 +15,7 @@ import { redirect } from "next/navigation"
 import { NavLinks } from "./navLinks"
 import { log } from "console"
 import Image from "next/image"
+import { authClient } from "@/lib/auth-client"
 
 
 
@@ -109,17 +110,16 @@ export const AuthButton = async () => {
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <form action="">
-                        <button className="flex items-center gap-2 w-full" onClick={async () => {
-                            "use server"
+                    <form action={async () => {
+                        "use server"
+                        await auth.api.signOut({
+                            headers: await headers()
+                        });
+                        console.log("REDIRECT");
 
-                            await auth.api.signOut({
-                                headers: await headers()
-                            });
-
-                            redirect("/auth/sign-in")
-
-                        }}>
+                        redirect("/")
+                    }}>
+                        <button type="submit" className="flex items-center gap-2 w-full">
                             <LogOut className="size-5 text-primary" />
                             Déconnexion
                         </button>
