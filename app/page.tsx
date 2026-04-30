@@ -13,7 +13,7 @@ export default async function Home() {
   const allRecipes = await getAllRecipes()
 
   return (
-    <HomePageComponent user={user} />
+    <HomePageComponent user={user} allRecipes={allRecipes} />
     // <div className="main w-full">
     //   <h1>Toutes les recettes de YesWeCook</h1>
 

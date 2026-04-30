@@ -1,6 +1,9 @@
 "use client"
+import { RecipeBase } from '@/types/recipe';
 import { motion } from 'motion/react';
-export function RecipeSection() {
+import Image from 'next/image';
+import Link from 'next/link';
+export function RecipeSection({ allRecipes, latestRecipe }: { allRecipes: RecipeBase[] | undefined | null, latestRecipe: RecipeBase | undefined | null }) {
     return (
         <section className="max-w-7xl mx-auto px-8 py-24">
             <div className="flex justify-between items-end mb-12">
@@ -11,24 +14,36 @@ export function RecipeSection() {
                 <a className="text-primary font-bold border-b-2 border-primary/20 hover:border-primary pb-1 transition-all" href="/explore-recipes">View All Recipes</a>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <motion.div
-                    whileHover={{ y: -5 }}
-                    className="md:col-span-8 group cursor-pointer"
-                >
-                    <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-4 shadow-editorial">
-                        <img
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXuCE87W99uzmWJ5KEKtL47qfJoT_kL3SVCA9PC18XDU6etaRamHzs9mjiy7IFrhYB1yTvAPycKtN7eN84lgctoYEEAMNTiWfWmrFaN2cwgQfuxJ26UfoldxZNu3BDfIw4U2enlXOEU7AkwCb83DUjyS_4ZELqR10551Bh_AWXBBg524rorHOzTkS5k6unTbEKcUUyb_org9plZgwdvZj0cePtPmPo168HcEqTT9R5Q_JivHxjHuscQoeRwiyiAAiBbl_0JzqstA"
-                            alt="Halloumi Salad"
-                            referrerPolicy="no-referrer"
-                        />
-                        <div className="absolute top-4 left-4">
-                            <span className="bg-white/90 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold uppercase">Must Try</span>
-                        </div>
-                    </div>
-                    <h3 className="text-2xl font-headline font-bold mb-2 group-hover:text-primary transition-colors">Warm Halloumi & Roasted Harvest Salad</h3>
-                    <p className="text-on-surface-variant line-clamp-2">The perfect balance of textures and warmth for any weeknight dinner.</p>
-                </motion.div>
+                {latestRecipe &&
+
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="md:col-span-8 group cursor-pointer overflow-hidden"
+                    >
+                        <Link href={`/${latestRecipe.category.toLowerCase()}/${latestRecipe.slug}`} className="relative aspect-[16/9] block rounded-xl overflow-hidden mb-4 shadow-editorial">
+                            <Image
+                                width={700}
+                                height={400}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src={latestRecipe.cover?.source ?? "https://lh3.googleusercontent.com/aida-public/AB6AXuDXuCE87W99uzmWJ5KEKtL47qfJoT_kL3SVCA9PC18XDU6etaRamHzs9mjiy7IFrhYB1yTvAPycKtN7eN84lgctoYEEAMNTiWfWmrFaN2cwgQfuxJ26UfoldxZNu3BDfIw4U2enlXOEU7AkwCb83DUjyS_4ZELqR10551Bh_AWXBBg524rorHOzTkS5k6unTbEKcUUyb_org9plZgwdvZj0cePtPmPo168HcEqTT9R5Q_JivHxjHuscQoeRwiyiAAiBbl_0JzqstA"}
+                                alt={latestRecipe.name}
+                                referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute top-4 left-4">
+                                <span className="bg-white/90 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold uppercase">Must Try</span>
+                            </div>
+                        </Link>
+                        <h3 className="text-2xl font-headline font-bold mb-2 group-hover:text-primary transition-colors">{latestRecipe.name}</h3>
+                        {latestRecipe.shortDescription &&
+                            <div className='short-description'>
+
+                                <div className="text-on-surface-variant line-clamp-2" dangerouslySetInnerHTML={{ __html: latestRecipe.shortDescription }} />
+                            </div>
+
+                        }
+                    </motion.div>
+                }
+
 
                 <div className="md:col-span-4 flex flex-col gap-8">
                     {[

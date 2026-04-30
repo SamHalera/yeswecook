@@ -38,7 +38,7 @@ export const IngredientsSidebar = ({ ingredients, comment }: { ingredients: Reci
                     ))}
                 </ul>
                 {comment &&
-                    <div className="mt-12 p-8 bg-surface-container-lowest rounded-xl border-l-4 border-primary shadow-sm">
+                    <div className="short-description mt-12 p-8 bg-surface-container-lowest rounded-xl border-l-4 border-primary shadow-sm">
                         <div className="text-sm italic text-on-surface-variant leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: comment }} />
 
                     </div>

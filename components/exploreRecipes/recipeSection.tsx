@@ -14,7 +14,8 @@ interface RecipeSectionProps {
     title: string;
     recipes: RecipeItemProps[] | undefined;
     gridCols?: number;
-    aspectRatio?: string
+    aspectRatio?: string;
+
 }
 
 export const RecipeSection: React.FC<RecipeSectionProps> = ({ chapter, title, recipes, gridCols = 3 }) => {
@@ -31,7 +32,7 @@ export const RecipeSection: React.FC<RecipeSectionProps> = ({ chapter, title, re
                         {chapter}
                     </span>
                     <h2 className="text-4xl font-headline font-extrabold text-on-surface mt-2">
-                        {title}
+                        {title} <span className='text-2xl text-primary'>({recipes.length})</span>
                     </h2>
                 </motion.div>
                 <motion.a
@@ -49,17 +50,21 @@ export const RecipeSection: React.FC<RecipeSectionProps> = ({ chapter, title, re
                 "grid gap-10",
                 gridCols === 3 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
             )}>
-                {recipes.map((recipe, i) => (
-                    <motion.div
-                        key={recipe.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
-                    >
-                        <RecipeCard recipe={recipe} />
-                    </motion.div>
-                ))}
+                {recipes.length > 0 ?
+                    recipes.map((recipe, i) => (
+                        <motion.div
+                            key={recipe.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                        >
+                            <RecipeCard recipe={recipe} />
+                        </motion.div>
+                    ))
+                    : <h3>Aucune recette trouvée</h3>
+                }
+
             </div>
         </section>
     );
