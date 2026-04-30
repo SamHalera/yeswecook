@@ -33,7 +33,17 @@ export const auth = betterAuth({
                 type: "string",
                 required: false,
                 input: true
-            }
+            },
+            username: {
+                type: "string",
+                required: true,
+                input: true
+            },
+            isAdmin: {
+                type: "boolean",
+                required: false,
+                input: false
+            },
         }
     }
 })

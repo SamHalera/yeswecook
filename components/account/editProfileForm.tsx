@@ -71,9 +71,9 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
             <div className="flex flex-col md:flex-row gap-12 items-start">
                 <div className="relative group shrink-0">
                     <div className="w-32 h-32 rounded-full overflow-hidden bg-surface-container-high border-4 border-surface-container-lowest shadow-xl ring-8 ring-on-surface/5">
-                        {dataImage ? (
+                        {dataImage?.imageSrc ? (
                             <CldImage
-                                src={dataImage?.imageSrc ?? ''}
+                                src={dataImage.imageSrc}
                                 alt={"image de profile"}
                                 width="450"
                                 height="450"

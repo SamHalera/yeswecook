@@ -25,6 +25,7 @@ export default async function RecipeEdit({ params }: { params: Promise<{ slug: s
                     ingredient: true
                 }
             },
+            author: true,
             cover: true
         }
     })

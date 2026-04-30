@@ -1,4 +1,4 @@
-import { getAllRecipes } from "@/actions/recipe/recipe-action";
+import { getAllPublicRecipes, getAllRecipes } from "@/actions/recipe/recipe-action";
 import { Hero } from "@/components/exploreRecipes/hero";
 import { RecipeSection } from "@/components/exploreRecipes/recipeSection";
 import { RecipesList } from "@/components/publicRecipe/recipesList";
@@ -7,7 +7,7 @@ import { getURL } from "next/dist/shared/lib/utils";
 
 export default async function ExploreRecipesPage() {
 
-    const recipes = await getAllRecipes()
+    const recipes = await getAllPublicRecipes()
 
     const currentUser = await getUser()
 

@@ -24,7 +24,7 @@ export const RecipeItem = ({ recipe, isCurrentUserAuthor }: { recipe: RecipeItem
                         <span className="flex items-center gap-2"><AlarmClockCheckIcon />cuisson : {recipe?.durationCook}</span>
                     </div>
                 </CardContent>
-                <CardFooter>{isCurrentUserAuthor ? "Moi" : recipe.author.name}</CardFooter>
+                <CardFooter>{isCurrentUserAuthor ? "Moi" : recipe.author?.name}</CardFooter>
             </Card>
         </Link>
     )

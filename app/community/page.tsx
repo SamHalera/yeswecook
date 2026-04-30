@@ -11,7 +11,7 @@ import RecentShares from '@/components/community/recentShares';
 import TrendingSidebar from '@/components/community/trendingSidebar';
 import { Newsletter } from '@/components/home/newsletterSection';
 
-export default function App() {
+export default function CommunityPage() {
     return (
         <div className="min-h-screen flex flex-col">
 

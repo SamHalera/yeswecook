@@ -5,27 +5,38 @@ import { slugifyName } from "@/lib/utils"
 import { NewRecipeFormType } from "@/lib/zod/recipeSchema"
 import { Category, Unity } from "@/src/generated/prisma/enums"
 import { RecipeMediaProps } from "@/types/recipe"
+import { getUserFromDB } from "../user/user-action"
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+    cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    secure: true,
+});
 
 
 export const createNewRecipeAction = async (values: NewRecipeFormType, media: RecipeMediaProps | null) => {
     const user = await getUser()
     if (!user) return
     try {
-        const { name, durationPrep, durationCook, nbOfPersons, category, description, ingredients, isPublic } = values
+        const { name, durationPrep, durationCook, nbOfPersons, category, instructions, comment, ingredients, isPublic, shortDescription } = values
         const slug = slugifyName(name) ?? ""
 
-        const mediaToAdd = [media && media]
+
         const recipe = await prisma.recipe.create({
             data: {
                 name,
                 durationPrep,
                 durationCook,
                 category: category as keyof typeof Category,
-                description,
+                instructions,
                 nbOfPersons,
+                comment,
                 slug,
                 authorId: user.id,
                 isPublic,
+                shortDescription,
                 ingredients: {
                     create: ingredients.map((item) => {
                         const ingredientName = item.ingredient.newName || item.ingredient.name;
@@ -59,6 +70,7 @@ export const createNewRecipeAction = async (values: NewRecipeFormType, media: Re
             }
         })
 
+
         if (recipe && media) {
             await prisma.media.create({
                 data: {
@@ -69,19 +81,19 @@ export const createNewRecipeAction = async (values: NewRecipeFormType, media: Re
             })
         }
 
-        return { status: "success", message: "La recette a bien été crée !" }
+        return { status: "success", message: "La recette a bien été crée !", recipe }
         //create recipeIngredint
     } catch (error) {
         console.error('error=>', error)
-        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !" }
+        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !", recipe: null }
     }
 }
 
-export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) => {
+export const updateRecipe = async (values: NewRecipeFormType, recipeId: string, media: RecipeMediaProps | null) => {
 
     const user = await getUser()
     if (!user) return
-    const { name, durationPrep, durationCook, nbOfPersons, category, description, ingredients } = values
+    const { name, durationPrep, durationCook, nbOfPersons, category, instructions, comment, ingredients, isPublic, shortDescription } = values
     const slug = slugifyName(values.name) ?? ""
 
     try {
@@ -96,9 +108,12 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
                     ...(durationPrep && { durationPrep }),
                     ...(durationCook && { durationCook }),
                     ...(category && { category: category as keyof typeof Category }),
-                    ...(description && { description }),
+                    ...(instructions && { instructions }),
+                    ...(comment && { comment }),
+                    ...(isPublic && { isPublic }),
                     ...(nbOfPersons && { nbOfPersons }),
                     ...(slug && { slug }),
+                    ...(shortDescription && { shortDescription }),
                     authorId: user.id,
                     ingredients: {
                         deleteMany: {},
@@ -130,66 +145,67 @@ export const updateRecipe = async (values: NewRecipeFormType, recipeId: string) 
                             ingredient: true
                         }
                     },
-                    author: true
+                    author: true,
+                    cover: true
+
                 }
             })
         })
 
-        return { status: "success", slug: recipeUpdated.slug, message: `La recette "${recipeUpdated.name}" a bien été modifiée !` }
+        if (recipeUpdated && media) {
+            //SI PAS ENCORE DE MEDIA
+            if (!recipeUpdated.cover) {
+                await createMedia(media, recipeUpdated.id)
+            }
+
+            //SI DEJA MEDIA et NEW MEDIE is different (delete current et replace abec NEW)
+            else if (recipeUpdated.cover && (media.publicId !== recipeUpdated.cover?.publicId)) {
+                const deleteCurrentMedia = await prisma.media.delete({
+                    where: {
+                        recipeId
+                    }
+                })
+                if (deleteCurrentMedia) {
+                    const deleteMEdiaFromCloudinary = await cloudinary.api.delete_resources(
+                        [deleteCurrentMedia.publicId],
+                        {
+                            type: "upload",
+                            resource_type: "image",
+                        }
+                    );
+                }
+                await createMedia(media, recipeUpdated.id)
+            }
+        }
+        else if (recipeUpdated.cover && !media) {
+            const deleteCurrentMedia = await prisma.media.delete({
+                where: {
+                    recipeId
+                }
+            })
+        }
+
+        return { status: "success", recipe: recipeUpdated, message: `La recette "${recipeUpdated.name}" a bien été modifiée !` }
     } catch (error) {
         console.error("Failed to update recipe:", error);
-        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !" }
+        return { status: "error", message: "Oups ! Une erreur est survenue lors de la création de la recette !", recipe: null }
     }
-
 }
 
-// export const persistRecipeMediaGallery = async (media: RecipeMediaProps[], recipeId: string) => {
-//     try {
-//         console.log("media form persistRecipeMediaGallery==>", media)
-//         const isNewCover = media.find(elt => elt.isRecipeCover)
-//         console.log("isNewCover==>", isNewCover)
-//         const previousRecipeCover = await prisma.media.findFirst({
-//             where: {
-//                 recipeId,
-//             }
-//         })
+const createMedia = async (media: RecipeMediaProps, recipeId: string) => {
+    try {
+        await prisma.media.create({
+            data: {
+                source: media.source,
+                publicId: media.publicId,
+                recipeId,
+            }
+        })
+    } catch (error) {
+        console.error("Failed to create media recipe:", error);
+    }
+}
 
-//         // await prisma.media.create({
-//         //     data: {
-//         //         source: media.source,
-//         //         publicId: media.publicId,
-//         //         recipeId
-//         //     }
-
-//         // })
-//         // await prisma.media.createMany({
-//         //     data: media.map((elt) => {
-//         //         console.log("elt==>", elt)
-//         //         return {
-//         //             source: elt.source,
-//         //             publicId: elt.publicId,
-//         //             isRecipeCover: elt.isRecipeCover,
-//         //             recipeId
-//         //         }
-//         //     })
-//         // })
-//         if (isNewCover && previousRecipeCover) {
-//             //update old recipe Cover
-//             console.log("previousRecipeCover==>", previousRecipeCover)
-//             await prisma.media.update({
-//                 where: {
-//                     id: previousRecipeCover.id
-//                 },
-//                 data: {
-//                     isRecipeCover: false
-//                 }
-//             })
-//         }
-//         return { status: "success" }
-//     } catch (error) {
-//         console.error('error creating media gallery for recipe==>', error)
-//     }
-// }
 export const getRecipeIngredients = async () => {
     try {
         const recipeIngredients = await prisma.recipeIngredient.findMany({
@@ -206,9 +222,15 @@ export const getAllRecipes = async () => {
             include: {
                 author: {
                     select: {
+                        id: true,
+                        username: true,
                         name: true,
                         email: true,
-                        image: true
+                        image: true,
+                        createdAt: true,
+                        updatedAt: true,
+                        emailVerified: true,
+                        isAdmin: true
                     }
                 },
                 cover: true
@@ -218,12 +240,44 @@ export const getAllRecipes = async () => {
         return allRecipes
 
     } catch (error) {
-        console.log("error==>", error)
+        console.error("error==>", error)
     }
 }
-export const getAllRecipesByUser = async () => {
-    const user = await getUser()
+export const getAllPublicRecipes = async () => {
+    try {
+        const allRecipes = await prisma.recipe.findMany({
+            where: { isPublic: true },
+            include: {
+                author: {
+                    select: {
+                        id: true,
+                        username: true,
+                        name: true,
+                        email: true,
+                        image: true,
+                        createdAt: true,
+                        updatedAt: true,
+                        emailVerified: true,
+                        isAdmin: true
+                    }
+                },
+                cover: true
+            }
+        })
+
+        return allRecipes
+
+    } catch (error) {
+        console.error("error==>", error)
+    }
+}
+export const getAllRecipesByUserName = async (username: string) => {
+    // const user = await getUser()
+
+    const user = await getUserFromDB(username)
+
     if (!user) return
+
 
     try {
         const allRecipes = await prisma.recipe.findMany({
@@ -233,9 +287,15 @@ export const getAllRecipesByUser = async () => {
             include: {
                 author: {
                     select: {
+                        id: true,
+                        username: true,
                         name: true,
                         email: true,
-                        image: true
+                        image: true,
+                        createdAt: true,
+                        updatedAt: true,
+                        emailVerified: true,
+                        isAdmin: true
                     }
                 },
                 cover: true
@@ -244,8 +304,29 @@ export const getAllRecipesByUser = async () => {
         return allRecipes
 
     } catch (error) {
-        console.log("error==>", error)
+        console.error("error==>", error)
     }
+
+}
+export const getAllRecipesByUser = async () => {
+    const user = await getUser()
+    if (!user) return
+    try {
+        const allRecipes = await prisma.recipe.findMany({
+            where: {
+                authorId: user?.id
+            },
+            include: {
+                author: true,
+                cover: true
+            }
+        })
+        return allRecipes
+
+    } catch (error) {
+        console.error("error==>", error)
+    }
+
 }
 
 export const getRecipeBySlug = async (slug: string) => {
@@ -257,9 +338,14 @@ export const getRecipeBySlug = async (slug: string) => {
             include: {
                 author: {
                     select: {
+                        id: true,
+                        username: true,
                         name: true,
                         email: true,
-                        image: true
+                        image: true,
+                        createdAt: true,
+                        updatedAt: true,
+                        emailVerified: true,
                     }
                 },
                 ingredients: {
@@ -272,7 +358,7 @@ export const getRecipeBySlug = async (slug: string) => {
         })
         return recipe
     } catch (error) {
-        console.log("error==>", error)
+        console.error("error==>", error)
     }
 }
 export const deleteRecipe = async (id: string, authorId: string) => {
@@ -285,6 +371,21 @@ export const deleteRecipe = async (id: string, authorId: string) => {
                 recipeId: id
             }
         })
+        const deleteCurrentMedia = await prisma.media.delete({
+            where: {
+                recipeId: id
+            }
+        })
+        if (deleteCurrentMedia) {
+            const deleteMEdiaFromCloudinary = await cloudinary.api.delete_resources(
+                [deleteCurrentMedia.publicId],
+                {
+                    type: "upload",
+                    resource_type: "image",
+                }
+            );
+
+        }
         const recipeDeleted = await prisma.recipe.delete({
             where: {
                 id
@@ -292,7 +393,7 @@ export const deleteRecipe = async (id: string, authorId: string) => {
         })
         return { status: "success", message: `La recette "${recipeDeleted.name}" a bien été modifiée !` }
     } catch (error) {
-        console.log("error==>", error)
+        console.error("error==>", error)
         return { status: "error", message: "Oups ! Une erreur est survenue lors de la supression de la recette !" }
     }
 }

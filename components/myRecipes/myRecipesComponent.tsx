@@ -11,7 +11,7 @@ import HeaderComponent from './headerComponent';
 import FiltersComponent from './filtersComponent';
 
 
-export default function MyRecipesComponent({ currentUser, allRecipes }: { currentUser: UserProps, allRecipes: RecipeBase[] | undefined }) {
+export default function MyRecipesComponent({ userPage, allRecipes, isOwner }: { userPage: UserProps, allRecipes: RecipeBase[] | undefined | null, isOwner: boolean }) {
 
     const [activeTab, setActiveTab] = useState<'public' | 'private'>('public');
     const [searchQuery, setSearchQuery] = useState('');
@@ -31,25 +31,40 @@ export default function MyRecipesComponent({ currentUser, allRecipes }: { curren
             <h1 className='px-8 font-headline text-4xl font-extrabold  mb-2 tracking-tight flex justify-center gap-4 text-primary m-auto'>Mon carnet de recettes <BookOpen size={35} /></h1>
             <div className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
                 {/* Header */}
-                <HeaderComponent currentUser={currentUser} />
+                <HeaderComponent userPage={userPage} isOwner={isOwner} />
 
                 {/* Filters */}
-                <FiltersComponent activeTab={activeTab} setActiveTab={setActiveTab} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                {isOwner &&
+
+                    < FiltersComponent activeTab={activeTab} setActiveTab={setActiveTab} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                }
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {allRecipes?.map((recipe, index) => {
+                <div className="flex gap-6">
+                    {allRecipes?.length === 0 ?
 
-                        return (<MyRecipeCard key={recipe.id} recipe={recipe} index={index} />)
-                    })}
-                    <Link href={"/admin/recipes/new"} className="group relative w-full flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/30 rounded-xl aspect-[4/5] hover:border-primary/50 transition-all bg-surface-container-low/50">
+                        <div className='w-full my-9'>
+                            <h2 className='text-3xl text-primary text-center'>{isOwner ? "Vous n'avez pas " : `${userPage?.username.toUpperCase()} n'a pas `} encore créé des recettes</h2>
+                        </div>
+                        :
+                        allRecipes?.map((recipe, index) => {
+
+                            return (<MyRecipeCard key={recipe.id} recipe={recipe} index={index} />)
+                        })
+                    }
+
+                </div>
+                {isOwner &&
+
+
+                    <Link href={"/admin/recipes/new"} className="group relative w-60 flex flex-col mx-auto my-10 items-center justify-center border-2 border-dashed border-outline-variant/30 rounded-xl aspect-[4/5] hover:border-primary/50 transition-all bg-surface-container-low/50">
                         <div className="bg-primary-fixed text-on-primary-fixed p-6 rounded-full mb-4 group-hover:scale-110 transition-transform shadow-lg">
                             <Plus size={32} />
                         </div>
                         <span className="font-headline text-xl font-bold">Create New Recipe</span>
                         <p className="text-on-surface-variant font-label text-sm mt-2">Start a new culinary journey</p>
                     </Link>
-                </div>
+                }
             </div>
 
 

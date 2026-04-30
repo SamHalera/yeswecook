@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { SearchBarComponent } from "./searchBarComponent"
 import { RecipeItemProps } from "@/types/recipe"
 
-export const RecipesList = ({ recipes, currentUser, categoryProps }: { recipes: RecipeItemProps[] | undefined, currentUser: UserProps | null, categoryProps: string }) => {
+export const RecipesList = ({ recipes, currentUser, categoryProps }: { recipes: RecipeItemProps[] | undefined, currentUser: UserProps | null | undefined, categoryProps: string }) => {
 
 
     const [categoryState, setCategoryState] = useState<string>(categoryProps)

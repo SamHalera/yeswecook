@@ -1,0 +1,3585 @@
+{
+  "users": [
+    {
+      "id": "user_01",
+      "name": "Marie Dupont",
+      "email": "marie.dupont@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_01",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_01",
+      "imagePublicId": "yeswecook/users/user_01",
+      "bio": "Passionnée de cuisine traditionnelle française, je partage mes recettes de famille avec amour."
+    },
+    {
+      "id": "user_02",
+      "name": "Pierre Martin",
+      "email": "pierre.martin@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_02",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_02",
+      "imagePublicId": "yeswecook/users/user_02",
+      "bio": "Chef amateur du dimanche, je cuisine au feeling avec des produits du marché local."
+    },
+    {
+      "id": "user_03",
+      "name": "Sophie Bernard",
+      "email": "sophie.bernard@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_03",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_03",
+      "imagePublicId": "yeswecook/users/user_03",
+      "bio": "Lyonnaise de cœur, j'adore les plats mijotés et les saveurs d'antan."
+    },
+    {
+      "id": "user_04",
+      "name": "Lucas Petit",
+      "email": "lucas.petit@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_04",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_04",
+      "imagePublicId": "yeswecook/users/user_04",
+      "bio": "Fan de cuisine du terroir, je revisite les classiques avec une touche moderne."
+    },
+    {
+      "id": "user_05",
+      "name": "Emma Leroy",
+      "email": "emma.leroy@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_05",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_05",
+      "imagePublicId": "yeswecook/users/user_05",
+      "bio": "Originaire de Marseille, je cuisine principalement des plats de la mer et de la Méditerranée."
+    },
+    {
+      "id": "user_06",
+      "name": "Antoine Moreau",
+      "email": "antoine.moreau@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_06",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_06",
+      "imagePublicId": "yeswecook/users/user_06",
+      "bio": "Passionné de gastronomie française, je partage mes créations culinaires inspirées du Sud-Ouest."
+    },
+    {
+      "id": "user_07",
+      "name": "Camille Roux",
+      "email": "camille.roux@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_07",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_07",
+      "imagePublicId": "yeswecook/users/user_07",
+      "bio": "Grande voyageuse, je mêle influences étrangères et recettes françaises dans mes plats."
+    },
+    {
+      "id": "user_08",
+      "name": "Thomas Girard",
+      "email": "thomas.girard@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_08",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_08",
+      "imagePublicId": "yeswecook/users/user_08",
+      "bio": "Cuisinier du dimanche, je partage mes plats familiaux et les recettes de ma grand-mère alsacienne."
+    },
+    {
+      "id": "user_09",
+      "name": "Léa Bonnet",
+      "email": "lea.bonnet@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_09",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_09",
+      "imagePublicId": "yeswecook/users/user_09",
+      "bio": "Amatrice de cuisine italienne et française, je cuisine avec des produits de saison."
+    },
+    {
+      "id": "user_10",
+      "name": "Nicolas Lambert",
+      "email": "nicolas.lambert@example.com",
+      "emailVerified": true,
+      "image": "https://i.pravatar.cc/300?u=user_10",
+      "imageSrc": "https://i.pravatar.cc/300?u=user_10",
+      "imagePublicId": "yeswecook/users/user_10",
+      "bio": "Parisien gourmand, je partage des recettes simples et savoureuses pour tous les jours."
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "oignons"
+    },
+    {
+      "name": "beurre"
+    },
+    {
+      "name": "farine"
+    },
+    {
+      "name": "vin blanc"
+    },
+    {
+      "name": "bouillon de bœuf"
+    },
+    {
+      "name": "gruyère râpé"
+    },
+    {
+      "name": "pain"
+    },
+    {
+      "name": "paleron de bœuf"
+    },
+    {
+      "name": "lardons"
+    },
+    {
+      "name": "carottes"
+    },
+    {
+      "name": "champignons de Paris"
+    },
+    {
+      "name": "ail"
+    },
+    {
+      "name": "bouquet garni"
+    },
+    {
+      "name": "vin rouge"
+    },
+    {
+      "name": "huile d'olive"
+    },
+    {
+      "name": "pommes de terre"
+    },
+    {
+      "name": "crème fraîche"
+    },
+    {
+      "name": "lait"
+    },
+    {
+      "name": "noix de muscade"
+    },
+    {
+      "name": "pommes"
+    },
+    {
+      "name": "sucre"
+    },
+    {
+      "name": "pâte feuilletée"
+    },
+    {
+      "name": "œufs"
+    },
+    {
+      "name": "sel"
+    },
+    {
+      "name": "poivre"
+    },
+    {
+      "name": "thon en boîte"
+    },
+    {
+      "name": "haricots verts"
+    },
+    {
+      "name": "tomates cerises"
+    },
+    {
+      "name": "olives noires"
+    },
+    {
+      "name": "anchois"
+    },
+    {
+      "name": "poivrons"
+    },
+    {
+      "name": "moutarde"
+    },
+    {
+      "name": "poulet entier"
+    },
+    {
+      "name": "herbes de Provence"
+    },
+    {
+      "name": "citron"
+    },
+    {
+      "name": "aubergines"
+    },
+    {
+      "name": "courgettes"
+    },
+    {
+      "name": "tomates"
+    },
+    {
+      "name": "thym"
+    },
+    {
+      "name": "basilic"
+    },
+    {
+      "name": "crème fleurette"
+    },
+    {
+      "name": "jaunes d'œuf"
+    },
+    {
+      "name": "vanille"
+    },
+    {
+      "name": "cassonade"
+    },
+    {
+      "name": "courge butternut"
+    },
+    {
+      "name": "bouillon de légumes"
+    },
+    {
+      "name": "cognac"
+    },
+    {
+      "name": "épaule de veau"
+    },
+    {
+      "name": "poireaux"
+    },
+    {
+      "name": "céleri"
+    },
+    {
+      "name": "chocolat noir"
+    },
+    {
+      "name": "cream cheese"
+    },
+    {
+      "name": "ciboulette"
+    },
+    {
+      "name": "câpres"
+    },
+    {
+      "name": "pâte brisée"
+    },
+    {
+      "name": "haricots blancs"
+    },
+    {
+      "name": "confit de canard"
+    },
+    {
+      "name": "saucisse de Toulouse"
+    },
+    {
+      "name": "chapelure"
+    },
+    {
+      "name": "entrecôte"
+    },
+    {
+      "name": "cerises"
+    },
+    {
+      "name": "sucre glace"
+    },
+    {
+      "name": "avocats"
+    },
+    {
+      "name": "oignons rouges"
+    },
+    {
+      "name": "citron vert"
+    },
+    {
+      "name": "coriandre"
+    },
+    {
+      "name": "piment"
+    },
+    {
+      "name": "saumon"
+    },
+    {
+      "name": "échalotes"
+    },
+    {
+      "name": "cornichons"
+    },
+    {
+      "name": "aneth"
+    },
+    {
+      "name": "lotte"
+    },
+    {
+      "name": "moules"
+    },
+    {
+      "name": "crevettes"
+    },
+    {
+      "name": "safran"
+    },
+    {
+      "name": "fenouil"
+    },
+    {
+      "name": "rouille"
+    },
+    {
+      "name": "caramel liquide"
+    },
+    {
+      "name": "tahini"
+    },
+    {
+      "name": "pois chiches"
+    },
+    {
+      "name": "cumin"
+    },
+    {
+      "name": "paprika"
+    },
+    {
+      "name": "mayonnaise"
+    },
+    {
+      "name": "magret de canard"
+    },
+    {
+      "name": "miel"
+    },
+    {
+      "name": "vinaigre balsamique"
+    },
+    {
+      "name": "fromage blanc"
+    },
+    {
+      "name": "blinis"
+    },
+    {
+      "name": "saumon fumé"
+    },
+    {
+      "name": "fromage de chèvre"
+    },
+    {
+      "name": "laitue"
+    },
+    {
+      "name": "noix"
+    },
+    {
+      "name": "huile de noix"
+    },
+    {
+      "name": "lapin"
+    },
+    {
+      "name": "moutarde de Dijon"
+    },
+    {
+      "name": "laurier"
+    },
+    {
+      "name": "bœuf haché"
+    },
+    {
+      "name": "fraises"
+    },
+    {
+      "name": "pâte sablée"
+    },
+    {
+      "name": "fécule de maïs"
+    },
+    {
+      "name": "baguette"
+    },
+    {
+      "name": "parmesan"
+    },
+    {
+      "name": "asperges blanches"
+    },
+    {
+      "name": "beurre clarifié"
+    },
+    {
+      "name": "vinaigre blanc"
+    },
+    {
+      "name": "os à moelle"
+    },
+    {
+      "name": "navets"
+    },
+    {
+      "name": "persil"
+    },
+    {
+      "name": "levure chimique"
+    },
+    {
+      "name": "zeste de citron"
+    },
+    {
+      "name": "riz arborio"
+    },
+    {
+      "name": "bouillon de volaille"
+    },
+    {
+      "name": "foie gras"
+    },
+    {
+      "name": "jambon"
+    },
+    {
+      "name": "praliné"
+    },
+    {
+      "name": "amandes effilées"
+    },
+    {
+      "name": "mozzarella"
+    },
+    {
+      "name": "spaghetti"
+    },
+    {
+      "name": "pain de mie"
+    },
+    {
+      "name": "glace à la vanille"
+    },
+    {
+      "name": "eau"
+    },
+    {
+      "name": "pâte à pain"
+    },
+    {
+      "name": "grondin"
+    },
+    {
+      "name": "filet de bœuf"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec_001",
+      "name": "Soupe à l'oignon gratinée",
+      "durationPrep": "15 min",
+      "durationCook": "45 min",
+      "category": "ENTREES",
+      "description": "Un grand classique de la cuisine française, cette soupe à l'oignon est généreuse et réconfortante. Les oignons caramélisés fondent dans un bouillon de bœuf parfumé, le tout gratiné avec un croûton de pain et du gruyère fondant.",
+      "shortDescription": "Soupe onctueuse aux oignons caramélisés, gratinée au gruyère.",
+      "nbOfPersons": "4",
+      "slug": "soupe-oignon-gratinee",
+      "isPublic": true,
+      "authorId": "user_01",
+      "cover": {
+        "source": "https://picsum.photos/seed/soupe-oignon-gratinee/800/600",
+        "caption": "Soupe à l'oignon gratinée",
+        "publicId": "yeswecook/recipes/soupe-oignon-gratinee"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_001",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_004",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_005",
+          "quantity": 1,
+          "unity": "l"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_007",
+          "quantity": 4,
+          "unity": "slice"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_002",
+      "name": "Bœuf bourguignon",
+      "durationPrep": "30 min",
+      "durationCook": "3h",
+      "category": "PLATS",
+      "description": "Un plat mythique de la cuisine bourguignonne. Le bœuf mijote lentement dans un vin rouge corsé avec des légumes et des lardons jusqu'à obtenir une viande fondante et une sauce veloutée.",
+      "shortDescription": "Bœuf mijoté au vin rouge, carottes et champignons.",
+      "nbOfPersons": "6",
+      "slug": "boeuf-bourguignon",
+      "isPublic": true,
+      "authorId": "user_01",
+      "cover": {
+        "source": "https://picsum.photos/seed/boeuf-bourguignon/800/600",
+        "caption": "Bœuf bourguignon mijoté",
+        "publicId": "yeswecook/recipes/boeuf-bourguignon"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_008",
+          "quantity": 800,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_010",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_011",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 3,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_013",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_014",
+          "quantity": 750,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_047",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_003",
+      "name": "Gratin dauphinois",
+      "durationPrep": "20 min",
+      "durationCook": "1h30",
+      "category": "PLATS",
+      "description": "Le gratin dauphinois est un plat simple mais absolument délicieux. Les pommes de terre fondent dans un mélange crémeux de lait et crème, parfumé à l'ail et à la muscade.",
+      "shortDescription": "Gratin de pommes de terre fondant à la crème et au gruyère.",
+      "nbOfPersons": "6",
+      "slug": "gratin-dauphinois",
+      "isPublic": true,
+      "authorId": "user_01",
+      "cover": {
+        "source": "https://picsum.photos/seed/gratin-dauphinois/800/600",
+        "caption": "Gratin dauphinois doré",
+        "publicId": "yeswecook/recipes/gratin-dauphinois"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_016",
+          "quantity": 1,
+          "unity": "kg"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 300,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_019",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_004",
+      "name": "Tarte tatin",
+      "durationPrep": "20 min",
+      "durationCook": "40 min",
+      "category": "DESSERTS",
+      "description": "La tarte tatin est un dessert emblématique de la pâtisserie française. Les pommes caramélisées sous une pâte feuilletée croustillante se retournent pour révéler un dessert doré et parfumé.",
+      "shortDescription": "Tarte aux pommes caramélisées, retournée et croustillante.",
+      "nbOfPersons": "6",
+      "slug": "tarte-tatin",
+      "isPublic": true,
+      "authorId": "user_01",
+      "cover": {
+        "source": "https://picsum.photos/seed/tarte-tatin/800/600",
+        "caption": "Tarte tatin aux pommes caramélisées",
+        "publicId": "yeswecook/recipes/tarte-tatin"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_020",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 80,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_022",
+          "quantity": 1,
+          "unity": "unit"
+        }
+      ]
+    },
+    {
+      "id": "rec_005",
+      "name": "Gougères au fromage",
+      "durationPrep": "20 min",
+      "durationCook": "25 min",
+      "category": "APERO",
+      "description": "Les gougères sont des petits choux au fromage, incontournables pour l'apéritif en Bourgogne. Légères et dorées, elles se servent tièdes pour un maximum de plaisir.",
+      "shortDescription": "Petits choux aériens au gruyère, parfaits pour l'apéro.",
+      "nbOfPersons": "20",
+      "slug": "gougeres-fromage",
+      "isPublic": true,
+      "authorId": "user_01",
+      "cover": {
+        "source": "https://picsum.photos/seed/gougeres-fromage/800/600",
+        "caption": "Gougères au gruyère dorées",
+        "publicId": "yeswecook/recipes/gougeres-fromage"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_121",
+          "quantity": 250,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "pinch"
+        }
+      ]
+    },
+    {
+      "id": "rec_006",
+      "name": "Salade niçoise",
+      "durationPrep": "20 min",
+      "durationCook": "15 min",
+      "category": "ENTREES",
+      "description": "Un classique de la cuisine provençale, la salade niçoise est fraîche, colorée et généreuse. Thon, anchois, olives noires et œufs durs composent une entrée complète et savoureuse.",
+      "shortDescription": "Salade provençale colorée au thon, olives et anchois.",
+      "nbOfPersons": "4",
+      "slug": "salade-nicoise",
+      "isPublic": true,
+      "authorId": "user_02",
+      "cover": {
+        "source": "https://picsum.photos/seed/salade-nicoise/800/600",
+        "caption": "Salade niçoise colorée",
+        "publicId": "yeswecook/recipes/salade-nicoise"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_026",
+          "quantity": 2,
+          "unity": "can"
+        },
+        {
+          "ingredientId": "ing_027",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_028",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_029",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_030",
+          "quantity": 8,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_031",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_032",
+          "quantity": 1,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_086",
+          "quantity": 1,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_007",
+      "name": "Poulet rôti aux herbes",
+      "durationPrep": "15 min",
+      "durationCook": "1h15",
+      "category": "PLATS",
+      "description": "Le poulet rôti aux herbes est un incontournable du repas dominical en France. Croustillant à l'extérieur, moelleux à l'intérieur, il embaume toute la maison de ses arômes provençaux.",
+      "shortDescription": "Poulet doré croustillant rôti aux herbes de Provence.",
+      "nbOfPersons": "4",
+      "slug": "poulet-roti-herbes",
+      "isPublic": true,
+      "authorId": "user_02",
+      "cover": {
+        "source": "https://picsum.photos/seed/poulet-roti-herbes/800/600",
+        "caption": "Poulet rôti doré aux herbes",
+        "publicId": "yeswecook/recipes/poulet-roti-herbes"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_033",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_034",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 4,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_016",
+          "quantity": 600,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_008",
+      "name": "Ratatouille provençale",
+      "durationPrep": "25 min",
+      "durationCook": "1h",
+      "category": "PLATS",
+      "description": "La ratatouille est un ragoût de légumes du soleil typique de la Provence. Aubergines, courgettes, poivrons et tomates s'assemblent en un plat coloré, parfumé au thym et au basilic.",
+      "shortDescription": "Ragoût de légumes provençaux coloré et parfumé.",
+      "nbOfPersons": "6",
+      "slug": "ratatouille-provencale",
+      "isPublic": false,
+      "authorId": "user_02",
+      "cover": {
+        "source": "https://picsum.photos/seed/ratatouille-provencale/800/600",
+        "caption": "Ratatouille aux légumes du soleil",
+        "publicId": "yeswecook/recipes/ratatouille-provencale"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_036",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_037",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_031",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_038",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 3,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 6,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_039",
+          "quantity": 2,
+          "unity": "sprig"
+        },
+        {
+          "ingredientId": "ing_040",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_009",
+      "name": "Crème brûlée à la vanille",
+      "durationPrep": "15 min",
+      "durationCook": "45 min",
+      "category": "DESSERTS",
+      "description": "La crème brûlée est un dessert d'une élégance intemporelle. Une crème onctueuse à la vanille, surmontée d'une fine couche de caramel croquant que l'on brise à la cuillère.",
+      "shortDescription": "Crème onctueuse à la vanille sous un caramel croustillant.",
+      "nbOfPersons": "4",
+      "slug": "creme-brulee-vanille",
+      "isPublic": true,
+      "authorId": "user_02",
+      "cover": {
+        "source": "https://picsum.photos/seed/creme-brulee-vanille/800/600",
+        "caption": "Crème brûlée caramelisée",
+        "publicId": "yeswecook/recipes/creme-brulee-vanille"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_041",
+          "quantity": 500,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_042",
+          "quantity": 5,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 80,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_043",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_044",
+          "quantity": 4,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_010",
+      "name": "Tapenade d'olives noires",
+      "durationPrep": "10 min",
+      "durationCook": "0 min",
+      "category": "APERO",
+      "description": "La tapenade est un condiment provençal incontournable à l'apéritif. Olives noires, anchois et câpres mixés à l'huile d'olive forment une tartinade intense et savoureuse.",
+      "shortDescription": "Tartinade provençale intense aux olives, anchois et câpres.",
+      "nbOfPersons": "8",
+      "slug": "tapenade-olives-noires",
+      "isPublic": true,
+      "authorId": "user_02",
+      "cover": {
+        "source": "https://picsum.photos/seed/tapenade-olives-noires/800/600",
+        "caption": "Tapenade d'olives noires",
+        "publicId": "yeswecook/recipes/tapenade-olives-noires"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_029",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_054",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_030",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        }
+      ]
+    },
+    {
+      "id": "rec_011",
+      "name": "Velouté de courge butternut",
+      "durationPrep": "15 min",
+      "durationCook": "30 min",
+      "category": "ENTREES",
+      "description": "Ce velouté de butternut est doux, soyeux et réconfortant. La courge se marie parfaitement avec la carotte pour donner une soupe d'une belle couleur dorée, relevée d'une pointe de muscade.",
+      "shortDescription": "Soupe veloutée et dorée à la courge butternut.",
+      "nbOfPersons": "4",
+      "slug": "veloute-courge-butternut",
+      "isPublic": true,
+      "authorId": "user_03",
+      "cover": {
+        "source": "https://picsum.photos/seed/veloute-courge-butternut/800/600",
+        "caption": "Velouté de courge butternut",
+        "publicId": "yeswecook/recipes/veloute-courge-butternut"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_045",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_010",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_046",
+          "quantity": 1,
+          "unity": "l"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_019",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_012",
+      "name": "Coq au vin",
+      "durationPrep": "30 min",
+      "durationCook": "1h30",
+      "category": "PLATS",
+      "description": "Le coq au vin est un plat familial par excellence. Le poulet mijoté dans le vin rouge avec des champignons, des lardons et des petits oignons développe des saveurs profondes et réconfortantes.",
+      "shortDescription": "Poulet mijoté au vin rouge avec champignons et lardons.",
+      "nbOfPersons": "4",
+      "slug": "coq-au-vin",
+      "isPublic": true,
+      "authorId": "user_03",
+      "cover": {
+        "source": "https://picsum.photos/seed/coq-au-vin/800/600",
+        "caption": "Coq au vin mijoté",
+        "publicId": "yeswecook/recipes/coq-au-vin"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_033",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_014",
+          "quantity": 750,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_011",
+          "quantity": 250,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 12,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 3,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_013",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_047",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_013",
+      "name": "Blanquette de veau",
+      "durationPrep": "30 min",
+      "durationCook": "1h30",
+      "category": "PLATS",
+      "description": "La blanquette de veau est un plat mijouté délicat à la sauce blanche crémeuse. Le veau tendre, les carottes et les poireaux baignent dans une sauce liée aux jaunes d'œufs et à la crème.",
+      "shortDescription": "Veau tendre en sauce crémeuse aux légumes.",
+      "nbOfPersons": "6",
+      "slug": "blanquette-de-veau",
+      "isPublic": true,
+      "authorId": "user_03",
+      "cover": {
+        "source": "https://picsum.photos/seed/blanquette-de-veau/800/600",
+        "caption": "Blanquette de veau crémeuse",
+        "publicId": "yeswecook/recipes/blanquette-de-veau"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_048",
+          "quantity": 1,
+          "unity": "kg"
+        },
+        {
+          "ingredientId": "ing_010",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_049",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_050",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_042",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_013",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_014",
+      "name": "Mousse au chocolat",
+      "durationPrep": "20 min",
+      "durationCook": "0 min",
+      "category": "DESSERTS",
+      "description": "La mousse au chocolat est un dessert inratable et universel. Légère et aérienne, elle fond en bouche avec une intensité chocolatée incomparable.",
+      "shortDescription": "Mousse légère et intense au chocolat noir.",
+      "nbOfPersons": "6",
+      "slug": "mousse-au-chocolat",
+      "isPublic": true,
+      "authorId": "user_03",
+      "cover": {
+        "source": "https://picsum.photos/seed/mousse-au-chocolat/800/600",
+        "caption": "Mousse au chocolat noir",
+        "publicId": "yeswecook/recipes/mousse-au-chocolat"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_051",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 80,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "pinch"
+        }
+      ]
+    },
+    {
+      "id": "rec_015",
+      "name": "Rillettes de thon maison",
+      "durationPrep": "10 min",
+      "durationCook": "0 min",
+      "category": "APERO",
+      "description": "Ces rillettes de thon sont ultra-rapides à préparer et parfaites pour l'apéritif. Le thon s'allie au cream cheese pour créer une tartinade crémeuse et parfumée à la ciboulette.",
+      "shortDescription": "Tartinade crémeuse au thon, citron et ciboulette.",
+      "nbOfPersons": "6",
+      "slug": "rillettes-thon-maison",
+      "isPublic": false,
+      "authorId": "user_03",
+      "cover": {
+        "source": "https://picsum.photos/seed/rillettes-thon-maison/800/600",
+        "caption": "Rillettes de thon fraîches",
+        "publicId": "yeswecook/recipes/rillettes-thon-maison"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_026",
+          "quantity": 2,
+          "unity": "can"
+        },
+        {
+          "ingredientId": "ing_052",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_053",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_054",
+          "quantity": 1,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_016",
+      "name": "Quiche lorraine",
+      "durationPrep": "20 min",
+      "durationCook": "40 min",
+      "category": "ENTREES",
+      "description": "La quiche lorraine est un classique indémodable de la cuisine française. Sa garniture crémeuse aux lardons et son appareil œufs-crème font d'elle une entrée généreuse et savoureuse.",
+      "shortDescription": "Quiche crémeuse aux lardons dorés et gratinée.",
+      "nbOfPersons": "6",
+      "slug": "quiche-lorraine",
+      "isPublic": true,
+      "authorId": "user_04",
+      "cover": {
+        "source": "https://picsum.photos/seed/quiche-lorraine/800/600",
+        "caption": "Quiche lorraine dorée",
+        "publicId": "yeswecook/recipes/quiche-lorraine"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_055",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_019",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_017",
+      "name": "Cassoulet maison",
+      "durationPrep": "30 min",
+      "durationCook": "3h",
+      "category": "PLATS",
+      "description": "Le cassoulet est LE plat emblématique du Sud-Ouest français. Haricots blancs, confit de canard et saucisse de Toulouse cuisent longuement pour créer un plat généreux et réconfortant.",
+      "shortDescription": "Cassoulet généreux au confit de canard et saucisse.",
+      "nbOfPersons": "6",
+      "slug": "cassoulet-maison",
+      "isPublic": true,
+      "authorId": "user_04",
+      "cover": {
+        "source": "https://picsum.photos/seed/cassoulet-maison/800/600",
+        "caption": "Cassoulet du Sud-Ouest",
+        "publicId": "yeswecook/recipes/cassoulet-maison"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_056",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_057",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_058",
+          "quantity": 400,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 4,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_038",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_013",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_059",
+          "quantity": 3,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_018",
+      "name": "Steak frites maison",
+      "durationPrep": "15 min",
+      "durationCook": "30 min",
+      "category": "PLATS",
+      "description": "Le steak frites est l'emblème du bistrot français. Une belle entrecôte saisie à la perfection accompagnée de frites dorées et croustillantes, c'est simple, généreux et irrésistible.",
+      "shortDescription": "Entrecôte saisie avec frites maison croustillantes.",
+      "nbOfPersons": "2",
+      "slug": "steak-frites-maison",
+      "isPublic": false,
+      "authorId": "user_04",
+      "cover": {
+        "source": "https://picsum.photos/seed/steak-frites-maison/800/600",
+        "caption": "Steak frites du bistrot",
+        "publicId": "yeswecook/recipes/steak-frites-maison"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_060",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_016",
+          "quantity": 600,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_039",
+          "quantity": 2,
+          "unity": "sprig"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_019",
+      "name": "Clafoutis aux cerises",
+      "durationPrep": "15 min",
+      "durationCook": "40 min",
+      "category": "DESSERTS",
+      "description": "Le clafoutis aux cerises est un dessert rustique et généreux typique du Limousin. Sa texture entre la crêpe épaisse et le flan englobe les cerises juteux dans une pâte légèrement sucrée.",
+      "shortDescription": "Gâteau moelleux aux cerises, entre flan et crêpe.",
+      "nbOfPersons": "6",
+      "slug": "clafoutis-cerises",
+      "isPublic": true,
+      "authorId": "user_04",
+      "cover": {
+        "source": "https://picsum.photos/seed/clafoutis-cerises/800/600",
+        "caption": "Clafoutis aux cerises doré",
+        "publicId": "yeswecook/recipes/clafoutis-cerises"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_061",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 60,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 300,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 20,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_043",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_062",
+          "quantity": 1,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_020",
+      "name": "Guacamole maison",
+      "durationPrep": "10 min",
+      "durationCook": "0 min",
+      "category": "APERO",
+      "description": "Un guacamole frais et généreux, parfait pour l'apéritif. Les avocats bien mûrs se mélangent à la tomate, à l'oignon rouge et au citron vert pour une tartinade fraîche et pimentée.",
+      "shortDescription": "Guacamole frais et cremeux à l'avocat et citron vert.",
+      "nbOfPersons": "6",
+      "slug": "guacamole-maison",
+      "isPublic": true,
+      "authorId": "user_04",
+      "cover": {
+        "source": "https://picsum.photos/seed/guacamole-maison/800/600",
+        "caption": "Guacamole frais à l'avocat",
+        "publicId": "yeswecook/recipes/guacamole-maison"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_063",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_038",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_064",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_065",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_066",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_067",
+          "quantity": 1,
+          "unity": "pinch"
+        }
+      ]
+    },
+    {
+      "id": "rec_021",
+      "name": "Tartare de saumon à l'aneth",
+      "durationPrep": "20 min",
+      "durationCook": "0 min",
+      "category": "ENTREES",
+      "description": "Un tartare de saumon frais et délicat, parfumé à l'aneth et relevé de câpres et cornichons. Une entrée élégante qui met en valeur la qualité du saumon.",
+      "shortDescription": "Saumon cru finement coupé, mariné aux herbes et citron.",
+      "nbOfPersons": "4",
+      "slug": "tartare-saumon-aneth",
+      "isPublic": true,
+      "authorId": "user_05",
+      "cover": {
+        "source": "https://picsum.photos/seed/tartare-saumon-aneth/800/600",
+        "caption": "Tartare de saumon frais",
+        "publicId": "yeswecook/recipes/tartare-saumon-aneth"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_068",
+          "quantity": 400,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_069",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_054",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_070",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_071",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_022",
+      "name": "Bouillabaisse marseillaise",
+      "durationPrep": "40 min",
+      "durationCook": "1h",
+      "category": "PLATS",
+      "description": "La bouillabaisse est le plat emblématique de Marseille. Ce riche ragoût de poissons méditerranéens est parfumé au safran et se déguste avec des croûtons frottés à l'ail et de la rouille.",
+      "shortDescription": "Soupe de poissons marseillaise au safran avec rouille.",
+      "nbOfPersons": "6",
+      "slug": "bouillabaisse-marseillaise",
+      "isPublic": true,
+      "authorId": "user_05",
+      "cover": {
+        "source": "https://picsum.photos/seed/bouillabaisse-marseillaise/800/600",
+        "caption": "Bouillabaisse aux poissons de Méditerranée",
+        "publicId": "yeswecook/recipes/bouillabaisse-marseillaise"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_072",
+          "quantity": 400,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_123",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_073",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_074",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_038",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 4,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_075",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_076",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 6,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_004",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_077",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_101",
+          "quantity": 1,
+          "unity": "unit"
+        }
+      ]
+    },
+    {
+      "id": "rec_023",
+      "name": "Saumon en papillote citron-aneth",
+      "durationPrep": "15 min",
+      "durationCook": "20 min",
+      "category": "PLATS",
+      "description": "Le saumon en papillote est une cuisson saine et savoureuse. Enfermé dans son papier avec des légumes croquants, il cuit à la vapeur en conservant tous ses arômes et sa tendreté.",
+      "shortDescription": "Saumon moelleux cuit en papillote avec légumes et aneth.",
+      "nbOfPersons": "4",
+      "slug": "saumon-papillote-citron-aneth",
+      "isPublic": true,
+      "authorId": "user_05",
+      "cover": {
+        "source": "https://picsum.photos/seed/saumon-papillote-citron-aneth/800/600",
+        "caption": "Saumon en papillote aux herbes",
+        "publicId": "yeswecook/recipes/saumon-papillote-citron-aneth"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_068",
+          "quantity": 600,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_037",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_010",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_071",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_024",
+      "name": "Île flottante",
+      "durationPrep": "25 min",
+      "durationCook": "20 min",
+      "category": "DESSERTS",
+      "description": "L'île flottante est un dessert poétique et léger. Des blancs en neige pochés flottent sur une crème anglaise à la vanille, le tout nappé d'un caramel doré et croquant.",
+      "shortDescription": "Blancs en neige sur crème anglaise vanille et caramel.",
+      "nbOfPersons": "4",
+      "slug": "ile-flottante",
+      "isPublic": true,
+      "authorId": "user_05",
+      "cover": {
+        "source": "https://picsum.photos/seed/ile-flottante/800/600",
+        "caption": "Île flottante au caramel",
+        "publicId": "yeswecook/recipes/ile-flottante"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_023",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 500,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_043",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_078",
+          "quantity": 100,
+          "unity": "ml"
+        }
+      ]
+    },
+    {
+      "id": "rec_025",
+      "name": "Houmous maison",
+      "durationPrep": "10 min",
+      "durationCook": "0 min",
+      "category": "APERO",
+      "description": "Un houmous onctueux et généreux fait maison. Les pois chiches mixés avec le tahini, le citron et l'ail donnent une tartinade crémeuse parfaite avec des légumes ou du pain pita.",
+      "shortDescription": "Purée crémeuse de pois chiches au tahini et citron.",
+      "nbOfPersons": "8",
+      "slug": "houmous-maison",
+      "isPublic": true,
+      "authorId": "user_05",
+      "cover": {
+        "source": "https://picsum.photos/seed/houmous-maison/800/600",
+        "caption": "Houmous maison au paprika",
+        "publicId": "yeswecook/recipes/houmous-maison"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_080",
+          "quantity": 400,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_079",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_081",
+          "quantity": 1,
+          "unity": "tsp"
+        },
+        {
+          "ingredientId": "ing_082",
+          "quantity": 1,
+          "unity": "tsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_026",
+      "name": "Œufs mimosa",
+      "durationPrep": "20 min",
+      "durationCook": "10 min",
+      "category": "ENTREES",
+      "description": "Les œufs mimosa sont une entrée classique et festive. Les jaunes d'œufs durs sont mélangés avec de la mayonnaise et de la moutarde pour farcir les blancs d'une garniture crémeuse.",
+      "shortDescription": "Œufs durs farcis à la mayonnaise et moutarde.",
+      "nbOfPersons": "4",
+      "slug": "oeufs-mimosa",
+      "isPublic": false,
+      "authorId": "user_06",
+      "cover": {
+        "source": "https://picsum.photos/seed/oeufs-mimosa/800/600",
+        "caption": "Œufs mimosa à la ciboulette",
+        "publicId": "yeswecook/recipes/oeufs-mimosa"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_023",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_083",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_032",
+          "quantity": 1,
+          "unity": "tsp"
+        },
+        {
+          "ingredientId": "ing_053",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_082",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_027",
+      "name": "Magret de canard au miel",
+      "durationPrep": "10 min",
+      "durationCook": "20 min",
+      "category": "PLATS",
+      "description": "Le magret de canard est un produit star du Sud-Ouest. Sa chair rosée et savoureuse se marie parfaitement avec la douceur du miel et l'acidité du vinaigre balsamique.",
+      "shortDescription": "Magret de canard rosé laqué au miel et balsamique.",
+      "nbOfPersons": "4",
+      "slug": "magret-canard-miel",
+      "isPublic": true,
+      "authorId": "user_06",
+      "cover": {
+        "source": "https://picsum.photos/seed/magret-canard-miel/800/600",
+        "caption": "Magret de canard laqué",
+        "publicId": "yeswecook/recipes/magret-canard-miel"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_084",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_085",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_086",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_069",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_039",
+          "quantity": 2,
+          "unity": "sprig"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_028",
+      "name": "Tarte flambée alsacienne",
+      "durationPrep": "20 min",
+      "durationCook": "15 min",
+      "category": "PLATS",
+      "description": "La tarte flambée, ou flammekueche, est la pizza alsacienne. Une fine pâte croustillante nappée de fromage blanc, d'oignons et de lardons qui sort brûlante du four.",
+      "shortDescription": "Flammekueche croustillante au fromage blanc et lardons.",
+      "nbOfPersons": "4",
+      "slug": "tarte-flambee-alsacienne",
+      "isPublic": true,
+      "authorId": "user_06",
+      "cover": {
+        "source": "https://picsum.photos/seed/tarte-flambee-alsacienne/800/600",
+        "caption": "Tarte flambée croustillante",
+        "publicId": "yeswecook/recipes/tarte-flambee-alsacienne"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_122",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_087",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_019",
+          "quantity": 1,
+          "unity": "pinch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_029",
+      "name": "Fondant au chocolat",
+      "durationPrep": "15 min",
+      "durationCook": "12 min",
+      "category": "DESSERTS",
+      "description": "Le fondant au chocolat est le dessert chouchou des gourmands. Sa croûte légèrement croustillante cède sous la cuillère pour révéler un cœur coulant au chocolat irrésistible.",
+      "shortDescription": "Gâteau au chocolat à cœur coulant, fondant et intense.",
+      "nbOfPersons": "6",
+      "slug": "fondant-chocolat",
+      "isPublic": true,
+      "authorId": "user_06",
+      "cover": {
+        "source": "https://picsum.photos/seed/fondant-chocolat/800/600",
+        "caption": "Fondant au chocolat cœur coulant",
+        "publicId": "yeswecook/recipes/fondant-chocolat"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_051",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 50,
+          "unity": "g"
+        }
+      ]
+    },
+    {
+      "id": "rec_030",
+      "name": "Blinis au saumon fumé",
+      "durationPrep": "10 min",
+      "durationCook": "0 min",
+      "category": "APERO",
+      "description": "Des blinis garnis de cream cheese et de saumon fumé, relevés d'aneth et de câpres. Un apéritif élégant et savoureux prêt en quelques minutes.",
+      "shortDescription": "Blinis garnis de saumon fumé, cream cheese et aneth.",
+      "nbOfPersons": "6",
+      "slug": "blinis-saumon-fume",
+      "isPublic": true,
+      "authorId": "user_06",
+      "cover": {
+        "source": "https://picsum.photos/seed/blinis-saumon-fume/800/600",
+        "caption": "Blinis au saumon fumé",
+        "publicId": "yeswecook/recipes/blinis-saumon-fume"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_088",
+          "quantity": 12,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_089",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_052",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_071",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_054",
+          "quantity": 2,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_031",
+      "name": "Salade de chèvre chaud",
+      "durationPrep": "15 min",
+      "durationCook": "10 min",
+      "category": "ENTREES",
+      "description": "La salade de chèvre chaud est une entrée bistrot incontournable. Du fromage de chèvre fondu sur des croûtons de pain de campagne, posé sur un lit de salade aux noix et vinaigrette balsamique.",
+      "shortDescription": "Salade fraîche au chèvre chaud, noix et vinaigrette balsamique.",
+      "nbOfPersons": "4",
+      "slug": "salade-chevre-chaud",
+      "isPublic": true,
+      "authorId": "user_07",
+      "cover": {
+        "source": "https://picsum.photos/seed/salade-chevre-chaud/800/600",
+        "caption": "Salade de chèvre chaud aux noix",
+        "publicId": "yeswecook/recipes/salade-chevre-chaud"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_090",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_007",
+          "quantity": 4,
+          "unity": "slice"
+        },
+        {
+          "ingredientId": "ing_091",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_092",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_085",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_086",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_093",
+          "quantity": 3,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_032",
+      "name": "Lapin à la moutarde",
+      "durationPrep": "15 min",
+      "durationCook": "1h",
+      "category": "PLATS",
+      "description": "Le lapin à la moutarde est un grand classique de la cuisine familiale française. Le lapin mijoté dans une sauce crémeuse à la moutarde de Dijon est tendre, savoureux et parfumé.",
+      "shortDescription": "Lapin mijoté en sauce crémeuse à la moutarde de Dijon.",
+      "nbOfPersons": "4",
+      "slug": "lapin-moutarde",
+      "isPublic": true,
+      "authorId": "user_07",
+      "cover": {
+        "source": "https://picsum.photos/seed/lapin-moutarde/800/600",
+        "caption": "Lapin à la moutarde en cocotte",
+        "publicId": "yeswecook/recipes/lapin-moutarde"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_094",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_095",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_004",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_039",
+          "quantity": 2,
+          "unity": "sprig"
+        },
+        {
+          "ingredientId": "ing_096",
+          "quantity": 2,
+          "unity": "leaf"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_033",
+      "name": "Hachis parmentier",
+      "durationPrep": "25 min",
+      "durationCook": "45 min",
+      "category": "PLATS",
+      "description": "Le hachis parmentier est un gratin généreux et réconfortant. La viande hachée en sauce tomate est recouverte d'une purée de pommes de terre onctueuse et gratinée au four.",
+      "shortDescription": "Gratin de bœuf haché recouvert de purée dorée au four.",
+      "nbOfPersons": "6",
+      "slug": "hachis-parmentier",
+      "isPublic": false,
+      "authorId": "user_07",
+      "cover": {
+        "source": "https://picsum.photos/seed/hachis-parmentier/800/600",
+        "caption": "Hachis parmentier gratiné",
+        "publicId": "yeswecook/recipes/hachis-parmentier"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_097",
+          "quantity": 600,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_016",
+          "quantity": 800,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_038",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 60,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_034",
+      "name": "Tarte aux fraises",
+      "durationPrep": "30 min",
+      "durationCook": "25 min",
+      "category": "DESSERTS",
+      "description": "La tarte aux fraises est un classique de la pâtisserie française qui annonce l'été. Une pâte sablée croustillante garnie de crème pâtissière vanillée et de fraises fraîches brillantes.",
+      "shortDescription": "Tarte sablée à la crème pâtissière et fraises fraîches.",
+      "nbOfPersons": "8",
+      "slug": "tarte-aux-fraises",
+      "isPublic": true,
+      "authorId": "user_07",
+      "cover": {
+        "source": "https://picsum.photos/seed/tarte-aux-fraises/800/600",
+        "caption": "Tarte aux fraises du printemps",
+        "publicId": "yeswecook/recipes/tarte-aux-fraises"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_098",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_099",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 500,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_042",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_100",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_043",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_062",
+          "quantity": 2,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_035",
+      "name": "Crostini aux champignons",
+      "durationPrep": "15 min",
+      "durationCook": "15 min",
+      "category": "APERO",
+      "description": "Des crostini croustillants garnis d'une poêlée de champignons à l'ail et au persil, parsemés de copeaux de parmesan. Un apéritif savoureux et facile à préparer.",
+      "shortDescription": "Toasts croustillants aux champignons aillés et parmesan.",
+      "nbOfPersons": "6",
+      "slug": "crostini-champignons",
+      "isPublic": true,
+      "authorId": "user_07",
+      "cover": {
+        "source": "https://picsum.photos/seed/crostini-champignons/800/600",
+        "caption": "Crostini aux champignons dorés",
+        "publicId": "yeswecook/recipes/crostini-champignons"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_101",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_011",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_102",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_036",
+      "name": "Asperges sauce hollandaise",
+      "durationPrep": "20 min",
+      "durationCook": "20 min",
+      "category": "ENTREES",
+      "description": "Les asperges blanches à la sauce hollandaise est un plat de saison raffiné. Les asperges tendres et fondantes se marient à merveille avec cette sauce beurrée et citronnée.",
+      "shortDescription": "Asperges blanches tendres nappées de sauce hollandaise.",
+      "nbOfPersons": "4",
+      "slug": "asperges-sauce-hollandaise",
+      "isPublic": true,
+      "authorId": "user_08",
+      "cover": {
+        "source": "https://picsum.photos/seed/asperges-sauce-hollandaise/800/600",
+        "caption": "Asperges blanches sauce hollandaise",
+        "publicId": "yeswecook/recipes/asperges-sauce-hollandaise"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_103",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_042",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_104",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_035",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_105",
+          "quantity": 1,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_037",
+      "name": "Pot-au-feu traditionnel",
+      "durationPrep": "30 min",
+      "durationCook": "3h",
+      "category": "PLATS",
+      "description": "Le pot-au-feu est le plat national français par excellence. La viande de bœuf cuit longuement avec des légumes dans un bouillon parfumé pour donner un plat nourrissant et réconfortant.",
+      "shortDescription": "Bœuf et légumes cuits dans un bouillon parfumé au bouquet garni.",
+      "nbOfPersons": "6",
+      "slug": "pot-au-feu-traditionnel",
+      "isPublic": true,
+      "authorId": "user_08",
+      "cover": {
+        "source": "https://picsum.photos/seed/pot-au-feu-traditionnel/800/600",
+        "caption": "Pot-au-feu traditionnel français",
+        "publicId": "yeswecook/recipes/pot-au-feu-traditionnel"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_008",
+          "quantity": 800,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_106",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_010",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_049",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_107",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_050",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 2,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_013",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_070",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_038",
+      "name": "Moules marinières",
+      "durationPrep": "15 min",
+      "durationCook": "15 min",
+      "category": "PLATS",
+      "description": "Les moules marinières sont un plat simple et généreux que l'on savoure en été au bord de la mer. Les moules s'ouvrent dans un bouillon parfumé au vin blanc, aux échalotes et au persil.",
+      "shortDescription": "Moules fraîches ouvertes dans un court-bouillon au vin blanc.",
+      "nbOfPersons": "4",
+      "slug": "moules-marinieres",
+      "isPublic": true,
+      "authorId": "user_08",
+      "cover": {
+        "source": "https://picsum.photos/seed/moules-marinieres/800/600",
+        "caption": "Moules marinières au vin blanc",
+        "publicId": "yeswecook/recipes/moules-marinieres"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_073",
+          "quantity": 2,
+          "unity": "kg"
+        },
+        {
+          "ingredientId": "ing_004",
+          "quantity": 300,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_069",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 100,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_039",
+      "name": "Madeleines au citron",
+      "durationPrep": "15 min",
+      "durationCook": "12 min",
+      "category": "DESSERTS",
+      "description": "Les madeleines sont ces petits gâteaux à la bosse dorée qui font la fierté de Commercy. Légères et parfumées au citron, elles fondent dans la bouche et rappellent les goûters d'enfance.",
+      "shortDescription": "Petits gâteaux moelleux à la bosse, parfumés au zeste de citron.",
+      "nbOfPersons": "12",
+      "slug": "madeleines-citron",
+      "isPublic": true,
+      "authorId": "user_08",
+      "cover": {
+        "source": "https://picsum.photos/seed/madeleines-citron/800/600",
+        "caption": "Madeleines dorées au citron",
+        "publicId": "yeswecook/recipes/madeleines-citron"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_003",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 3,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_085",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_109",
+          "quantity": 1,
+          "unity": "tsp"
+        },
+        {
+          "ingredientId": "ing_110",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "pinch"
+        }
+      ]
+    },
+    {
+      "id": "rec_040",
+      "name": "Pissaladière niçoise",
+      "durationPrep": "20 min",
+      "durationCook": "45 min",
+      "category": "APERO",
+      "description": "La pissaladière est la tarte salée traditionnelle de Nice. Sur une pâte à pain généreuse, les oignons confits fondent sous une garniture d'anchois et d'olives noires savoureux.",
+      "shortDescription": "Tarte niçoise aux oignons confits, anchois et olives noires.",
+      "nbOfPersons": "8",
+      "slug": "pissaladiere-nicoise",
+      "isPublic": false,
+      "authorId": "user_08",
+      "cover": {
+        "source": "https://picsum.photos/seed/pissaladiere-nicoise/800/600",
+        "caption": "Pissaladière aux oignons et anchois",
+        "publicId": "yeswecook/recipes/pissaladiere-nicoise"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_122",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 6,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_030",
+          "quantity": 12,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_029",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_039",
+          "quantity": 2,
+          "unity": "sprig"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 5,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_041",
+      "name": "Velouté de champignons",
+      "durationPrep": "15 min",
+      "durationCook": "25 min",
+      "category": "ENTREES",
+      "description": "Ce velouté de champignons est soyeux, parfumé et profondément savoureux. Les champignons de Paris sautés avec l'ail et mixés à la crème donnent une soupe élégante et réconfortante.",
+      "shortDescription": "Soupe soyeuse aux champignons de Paris, crème et ail.",
+      "nbOfPersons": "4",
+      "slug": "veloute-champignons",
+      "isPublic": true,
+      "authorId": "user_09",
+      "cover": {
+        "source": "https://picsum.photos/seed/veloute-champignons/800/600",
+        "caption": "Velouté de champignons crémeux",
+        "publicId": "yeswecook/recipes/veloute-champignons"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_011",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 150,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_112",
+          "quantity": 600,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_042",
+      "name": "Risotto aux champignons",
+      "durationPrep": "15 min",
+      "durationCook": "30 min",
+      "category": "PLATS",
+      "description": "Un risotto crémeux et savoureux aux champignons de Paris. Le riz arborio absorbe progressivement le bouillon chaud pour atteindre une texture onctueuse, enrichie de parmesan et de beurre.",
+      "shortDescription": "Risotto crémeux aux champignons, parmesan et herbes fraîches.",
+      "nbOfPersons": "4",
+      "slug": "risotto-champignons",
+      "isPublic": true,
+      "authorId": "user_09",
+      "cover": {
+        "source": "https://picsum.photos/seed/risotto-champignons/800/600",
+        "caption": "Risotto aux champignons crémeux",
+        "publicId": "yeswecook/recipes/risotto-champignons"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_111",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_011",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_001",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_004",
+          "quantity": 150,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_046",
+          "quantity": 1,
+          "unity": "l"
+        },
+        {
+          "ingredientId": "ing_102",
+          "quantity": 80,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_043",
+      "name": "Filet de bœuf Wellington",
+      "durationPrep": "45 min",
+      "durationCook": "35 min",
+      "category": "PLATS",
+      "description": "Le bœuf Wellington est un plat de fête spectaculaire. Un filet de bœuf enrobé de foie gras et de duxelles de champignons dans une pâte feuilletée dorée, rosé à cœur.",
+      "shortDescription": "Filet de bœuf en croûte feuilletée avec foie gras et champignons.",
+      "nbOfPersons": "6",
+      "slug": "filet-boeuf-wellington",
+      "isPublic": true,
+      "authorId": "user_09",
+      "cover": {
+        "source": "https://picsum.photos/seed/filet-boeuf-wellington/800/600",
+        "caption": "Bœuf Wellington en croûte dorée",
+        "publicId": "yeswecook/recipes/filet-boeuf-wellington"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_124",
+          "quantity": 800,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_022",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_113",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_011",
+          "quantity": 300,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_095",
+          "quantity": 2,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_114",
+          "quantity": 4,
+          "unity": "slice"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_044",
+      "name": "Paris-Brest",
+      "durationPrep": "40 min",
+      "durationCook": "30 min",
+      "category": "DESSERTS",
+      "description": "Le Paris-Brest est un chef-d'œuvre de la pâtisserie française. Une couronne de pâte à choux garnie d'une crème mousseline pralinée, décorée d'amandes effilées dorées.",
+      "shortDescription": "Couronne de choux fourrée à la crème pralinée et amandes.",
+      "nbOfPersons": "8",
+      "slug": "paris-brest",
+      "isPublic": false,
+      "authorId": "user_09",
+      "cover": {
+        "source": "https://picsum.photos/seed/paris-brest/800/600",
+        "caption": "Paris-Brest à la crème pralinée",
+        "publicId": "yeswecook/recipes/paris-brest"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_121",
+          "quantity": 250,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 125,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 5,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_115",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_041",
+          "quantity": 400,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_116",
+          "quantity": 50,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_062",
+          "quantity": 2,
+          "unity": "tbsp"
+        }
+      ]
+    },
+    {
+      "id": "rec_045",
+      "name": "Bouchées feuilletées au fromage",
+      "durationPrep": "15 min",
+      "durationCook": "20 min",
+      "category": "APERO",
+      "description": "Des bouchées feuilletées croustillantes au gruyère fondant, à la texture légère et dorée. Simples et rapides, elles font l'unanimité à l'apéritif et disparaissent en quelques minutes.",
+      "shortDescription": "Feuilletés croustillants au gruyère, légères bouchées apéritives.",
+      "nbOfPersons": "20",
+      "slug": "bouchees-feuilletees-fromage",
+      "isPublic": true,
+      "authorId": "user_09",
+      "cover": {
+        "source": "https://picsum.photos/seed/bouchees-feuilletees-fromage/800/600",
+        "caption": "Bouchées feuilletées au gruyère",
+        "publicId": "yeswecook/recipes/bouchees-feuilletees-fromage"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_022",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_082",
+          "quantity": 1,
+          "unity": "tsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_046",
+      "name": "Bruschetta aux tomates et mozzarella",
+      "durationPrep": "15 min",
+      "durationCook": "5 min",
+      "category": "ENTREES",
+      "description": "Des bruschetta fraîches et colorées, parfaites en entrée pour une soirée estivale. Le pain grillé frotté à l'ail est garni de tomates mûres, de mozzarella fondante et de basilic frais.",
+      "shortDescription": "Toasts grillés à l'ail, tomates fraîches, mozzarella et basilic.",
+      "nbOfPersons": "4",
+      "slug": "bruschetta-tomates-mozzarella",
+      "isPublic": true,
+      "authorId": "user_10",
+      "cover": {
+        "source": "https://picsum.photos/seed/bruschetta-tomates-mozzarella/800/600",
+        "caption": "Bruschetta colorées à la tomate",
+        "publicId": "yeswecook/recipes/bruschetta-tomates-mozzarella"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_038",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_101",
+          "quantity": 1,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_040",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 4,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_117",
+          "quantity": 125,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_047",
+      "name": "Pasta carbonara à la française",
+      "durationPrep": "10 min",
+      "durationCook": "15 min",
+      "category": "PLATS",
+      "description": "Une version française de la carbonara avec une touche de crème fraîche pour une sauce encore plus onctueuse. Les lardons grillés et le parmesan apportent richesse et saveur à ce plat généreux.",
+      "shortDescription": "Spaghetti crémeux aux lardons grillés et parmesan.",
+      "nbOfPersons": "4",
+      "slug": "pasta-carbonara-francaise",
+      "isPublic": true,
+      "authorId": "user_10",
+      "cover": {
+        "source": "https://picsum.photos/seed/pasta-carbonara-francaise/800/600",
+        "caption": "Pasta carbonara crémeuse",
+        "publicId": "yeswecook/recipes/pasta-carbonara-francaise"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_118",
+          "quantity": 400,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_009",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_017",
+          "quantity": 150,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_102",
+          "quantity": 80,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    },
+    {
+      "id": "rec_048",
+      "name": "Croque monsieur gratiné",
+      "durationPrep": "10 min",
+      "durationCook": "10 min",
+      "category": "PLATS",
+      "description": "Le croque monsieur est le sandwich chaud français par excellence. Du pain de mie doré au beurre, garni de jambon et de gruyère fondu, nappé d'une béchamel crémeuse et gratiné au four.",
+      "shortDescription": "Sandwich chaud au jambon, gruyère fondu et béchamel gratinée.",
+      "nbOfPersons": "4",
+      "slug": "croque-monsieur-gratine",
+      "isPublic": false,
+      "authorId": "user_10",
+      "cover": {
+        "source": "https://picsum.photos/seed/croque-monsieur-gratine/800/600",
+        "caption": "Croque monsieur gratiné doré",
+        "publicId": "yeswecook/recipes/croque-monsieur-gratine"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_119",
+          "quantity": 8,
+          "unity": "slice"
+        },
+        {
+          "ingredientId": "ing_114",
+          "quantity": 4,
+          "unity": "slice"
+        },
+        {
+          "ingredientId": "ing_006",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 40,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 30,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_018",
+          "quantity": 300,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_019",
+          "quantity": 1,
+          "unity": "pinch"
+        }
+      ]
+    },
+    {
+      "id": "rec_049",
+      "name": "Profiteroles au chocolat",
+      "durationPrep": "30 min",
+      "durationCook": "25 min",
+      "category": "DESSERTS",
+      "description": "Les profiteroles sont un dessert festif et gourmand. Des choux légers garnis de glace à la vanille, nappés d'une généreuse sauce au chocolat chaud. Un dessert inratable qui fait toujours l'unanimité.",
+      "shortDescription": "Choux à la glace vanille nappés de sauce chocolat chaude.",
+      "nbOfPersons": "6",
+      "slug": "profiteroles-chocolat",
+      "isPublic": true,
+      "authorId": "user_10",
+      "cover": {
+        "source": "https://picsum.photos/seed/profiteroles-chocolat/800/600",
+        "caption": "Profiteroles sauce chocolat",
+        "publicId": "yeswecook/recipes/profiteroles-chocolat"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_121",
+          "quantity": 250,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_002",
+          "quantity": 100,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_003",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_023",
+          "quantity": 4,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_120",
+          "quantity": 500,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_051",
+          "quantity": 200,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_041",
+          "quantity": 200,
+          "unity": "ml"
+        },
+        {
+          "ingredientId": "ing_021",
+          "quantity": 30,
+          "unity": "g"
+        }
+      ]
+    },
+    {
+      "id": "rec_050",
+      "name": "Champignons farcis au chèvre",
+      "durationPrep": "15 min",
+      "durationCook": "20 min",
+      "category": "APERO",
+      "description": "Des champignons de Paris farcis au fromage de chèvre, ail et persil, gratinés à la chapelure. Un apéritif chaud et savoureux qui se prépare en quelques minutes et régale tous les convives.",
+      "shortDescription": "Champignons farcis au fromage de chèvre et herbes, gratinés.",
+      "nbOfPersons": "4",
+      "slug": "champignons-farcis-chevre",
+      "isPublic": true,
+      "authorId": "user_10",
+      "cover": {
+        "source": "https://picsum.photos/seed/champignons-farcis-chevre/800/600",
+        "caption": "Champignons farcis gratinés",
+        "publicId": "yeswecook/recipes/champignons-farcis-chevre"
+      },
+      "recipeIngredients": [
+        {
+          "ingredientId": "ing_011",
+          "quantity": 20,
+          "unity": "unit"
+        },
+        {
+          "ingredientId": "ing_012",
+          "quantity": 2,
+          "unity": "clove"
+        },
+        {
+          "ingredientId": "ing_108",
+          "quantity": 1,
+          "unity": "bunch"
+        },
+        {
+          "ingredientId": "ing_090",
+          "quantity": 150,
+          "unity": "g"
+        },
+        {
+          "ingredientId": "ing_059",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_015",
+          "quantity": 3,
+          "unity": "tbsp"
+        },
+        {
+          "ingredientId": "ing_024",
+          "quantity": 1,
+          "unity": "to_taste"
+        },
+        {
+          "ingredientId": "ing_025",
+          "quantity": 1,
+          "unity": "to_taste"
+        }
+      ]
+    }
+  ]
+}

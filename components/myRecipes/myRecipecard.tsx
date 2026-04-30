@@ -8,7 +8,9 @@ import {
 import { RecipeBase } from '@/types/recipe';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 export const MyRecipeCard = ({ recipe, index }: { recipe: RecipeBase, index: number }) => {
+
     const recipeCover = recipe.cover
     const pathToRecipePage = `/${recipe.category.toLowerCase()}/${recipe.slug}`
     const router = useRouter()
@@ -23,8 +25,10 @@ export const MyRecipeCard = ({ recipe, index }: { recipe: RecipeBase, index: num
 
             <Link href={pathToRecipePage} className="group cursor-pointer">
                 <div className="relative mb-4 overflow-hidden rounded-xl bg-surface-container-low aspect-[4/5]">
-                    <img
-                        src={recipeCover?.source}
+                    <Image
+                        width={300}
+                        height={400}
+                        src={recipeCover?.source ?? ""}
                         alt={recipe.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         referrerPolicy="no-referrer"

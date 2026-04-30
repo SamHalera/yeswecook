@@ -19,7 +19,8 @@ model Recipe {
   durationPrep  String?
   durationCook  String?
   category  Category
-  description String
+  instructions String
+  comment     String?
   nbOfPersons String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -29,6 +30,7 @@ model Recipe {
   ingredients RecipeIngredient[]
   slug    String @unique
   isPublic Boolean @default(false)
+  shortDescription    String?
 
 }
 model Ingredient {
@@ -98,6 +100,8 @@ model Media {
 }
 model User {
   id            String    @id
+  username      String    @unique
+  isAdmin       Boolean   @default(false)
   name          String
   email         String
   emailVerified Boolean   @default(false)

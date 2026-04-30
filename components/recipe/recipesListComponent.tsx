@@ -1,8 +1,6 @@
 "use client"
 
-import { deleteRecipe } from "@/actions/recipe/recipe-action"
 import { Recipe } from "@/src/generated/prisma/client"
-import { Trash, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 

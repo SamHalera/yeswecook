@@ -1,0 +1,79 @@
+Structure:
+
+users — 10 users with id, name, email, image/imageSrc/imagePublicId (pravatar.cc placeholders) and a French bio
+ingredients — 124 unique ingredients (ing_001…ing_124)
+recipes — 50 recipes, each with:
+cover — { source, caption, publicId } (picsum.photos deterministic placeholders keyed on slug)
+recipeIngredients — array of { ingredientId, quantity, unity } with real quantities and correct Unity enum values
+Recipes per user (5 each):
+
+Category	Count	Example
+ENTREES	10	Soupe à l'oignon, Tartare de saumon
+PLATS	20	Bœuf bourguignon, Bouillabaisse
+DESSERTS	10	Tarte tatin, Fondant au chocolat
+APERO	10	Gougères, Blinis au saumon fumé
+To use this in a seed script, read the JSON and create in order: users → ingredients → recipes (with nested cover as a Media create and recipeIngredients as RecipeIngredient createMany).
+
+
+Pavé de Saumon aux Herbes
+
+Peau croustillante, cœur fondant, et un beurre parfumé aux herbes fraîches qui vient tout napper… Un plat élégant prêt en 15 minutes, à la fois simple et bluffant. De quoi transformer un dîner ordinaire en vrai moment de plaisir.
+
+prep 28 minutes
+cuisson 10 minutes
+2 personnes
+2 Unité (pièce)
+Saumon
+1 Pincée
+fleur de sel
+5 Cuillère à soupe
+zeste de citron
+1 Cuillère à soupe
+ciboulette
+1 Cuillère à soupe
+persil
+1 Gousse
+Aïl
+60 Gramme
+beurre
+1 Pincée
+Poivre
+1 Pincée
+sel
+1 Cuillère à soupe
+huile d'avocat
+10 Gramme
+Nutella
+Étape 1 — Préparer le beurre aux herbes
+Dans un bol, mélangez le beurre ramolli avec l'ail, le persil, la ciboulette, le thym et le zeste de citron.
+
+Assaisonnez avec la fleur de sel et mélangez bien jusqu'à obtenir une texture homogène.
+
+Réservez à température ambiante (ou roulez dans du film alimentaire et placez au réfrigérateur).
+
+Étape 2 — Préparer le saumon
+Sortez les pavés de saumon du réfrigérateur 20 minutes avant la cuisson pour qu'ils soient à température ambiante.
+
+Séchez-les soigneusement avec du papier absorbant — c'est la clé pour obtenir une belle croûte dorée.
+
+Assaisonnez généreusement les deux faces avec du sel et du poivre.
+
+Étape 3 — Saisir le saumon
+Faites chauffer votre poêle en fonte à feu vif pendant 2 à 3 minutes, jusqu'à ce qu'elle soit très chaude.
+
+Ajoutez l'huile et laissez-la frémir légèrement.
+
+Déposez les pavés côté peau vers le bas et appuyez doucement dessus pendant les premières secondes pour éviter qu'ils ne se rétractent.
+
+Faites cuire 4 à 5 minutes sans bouger les pavés, jusqu'à ce que la peau soit bien croustillante et dorée.
+
+Retournez délicatement les pavés et faites cuire encore 1 à 2 minutes côté chair — le cœur doit rester légèrement rosé.
+
+Étape 4 — Finition au beurre aux herbes
+Réduisez le feu à moyen-doux.
+
+Ajoutez une belle noix de beurre aux herbes directement dans la poêle.
+
+Arrosez les pavés avec le beurre fondu à l'aide d'une cuillère pendant 30 à 60 secondes (basting).
+
+Retirez du feu immédiatement.

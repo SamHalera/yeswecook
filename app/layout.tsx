@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Epilogue, Manrope } from "next/font/google";
 
 import './globals.css'
 import { cn } from "@/lib/utils";
-import { Header } from "@/components/globals/header";
+
 import { Toaster } from "@/components/ui/sonner";
 import { HeaderNew } from "@/components/globals/header-new";
 import { Footer } from "@/components/globals/footer";

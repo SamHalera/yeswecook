@@ -20,7 +20,7 @@ export const SingleRecipePage = ({ recipe }: { recipe: RecipeProps }) => {
                     <span className="flex items-center gap-2"><AlarmClockIcon />preparation : {recipe?.durationPrep}</span>
                     <span className="flex items-center gap-2"><AlarmClockCheckIcon />cuisson : {recipe?.durationCook}</span>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: recipe?.description }} />
+                <div dangerouslySetInnerHTML={{ __html: recipe?.instructions }} />
             </div>
         </div>
     )

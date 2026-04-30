@@ -1,6 +1,8 @@
 type UserProps = {
     id: string;
+    username: string;
     createdAt: Date;
+    isAdmin?: boolean | null;
     updatedAt: Date;
     email: string;
     emailVerified: boolean;

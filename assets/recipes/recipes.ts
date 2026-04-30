@@ -1,3 +1,5 @@
+import { Unity } from "@/src/generated/prisma/enums";
+
 const recipesHardCoded = [
     {
         title: "Warm Halloumi & Roasted Harvest Salad",
@@ -52,3 +54,35 @@ const recipesHardCoded = [
         // comments: 182
     }
 ]
+export const unityLabels: Record<Unity, string> = {
+    mg: "Milligramme",
+    g: "Gramme",
+    kg: "Kilogramme",
+    oz: "Once",
+    lb: "Livre",
+    ml: "Millilitre",
+    cl: "Centilitre",
+    dl: "Décilitre",
+    l: "Litre",
+    tsp: "Cuillère à café",
+    tbsp: "Cuillère à soupe",
+    fl_oz: "Once liquide",
+    cup: "Tasse",
+    pt: "Pinte",
+    qt: "Quart",
+    gal: "Gallon",
+    unit: "Unité (pièce)",
+    dozen: "Douzaine",
+    pinch: "Pincée",
+    dash: "Trait",
+    drop: "Goutte",
+    slice: "Tranche",
+    clove: "Gousse",
+    bunch: "Botte",
+    sprig: "Brin",
+    leaf: "Feuille",
+    can: "Boîte",
+    packet: "Sachet",
+    to_taste: "À volonté",
+    as_needed: "Selon besoin",
+};

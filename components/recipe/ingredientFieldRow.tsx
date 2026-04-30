@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/select"
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { unityLabels } from "@/assets/recipes/recipes";
 
 export const IngredientFieldRow = ({ register, setValue, field, errors, index, remove, dataIngredients }: {
     register: UseFormRegister<NewRecipeFormType>;
@@ -141,35 +142,4 @@ export const IngredientFieldRow = ({ register, setValue, field, errors, index, r
     )
 }
 
-export const unityLabels: Record<Unity, string> = {
-    mg: "Milligramme",
-    g: "Gramme",
-    kg: "Kilogramme",
-    oz: "Once",
-    lb: "Livre",
-    ml: "Millilitre",
-    cl: "Centilitre",
-    dl: "Décilitre",
-    l: "Litre",
-    tsp: "Cuillère à café",
-    tbsp: "Cuillère à soupe",
-    fl_oz: "Once liquide",
-    cup: "Tasse",
-    pt: "Pinte",
-    qt: "Quart",
-    gal: "Gallon",
-    unit: "Unité (pièce)",
-    dozen: "Douzaine",
-    pinch: "Pincée",
-    dash: "Trait",
-    drop: "Goutte",
-    slice: "Tranche",
-    clove: "Gousse",
-    bunch: "Botte",
-    sprig: "Brin",
-    leaf: "Feuille",
-    can: "Boîte",
-    packet: "Sachet",
-    to_taste: "À volonté",
-    as_needed: "Selon besoin",
-};
+

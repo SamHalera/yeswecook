@@ -6,8 +6,9 @@ import { Button } from "../ui/button"
 import { useRouter } from "next/navigation"
 import { deleteRecipe } from "@/actions/recipe/recipe-action"
 import { toast } from "sonner"
+import { RecipeProps } from "@/types/recipe"
 
-export const AlertDeleteComponent = ({ elementName, recipeId, authorId }: { elementName: string, recipeId: string, authorId: string }) => {
+export const AlertDeleteComponent = ({ elementName, recipe, authorId }: { elementName: string, recipe: RecipeProps, authorId: string }) => {
 
     const router = useRouter()
     return (
@@ -26,11 +27,12 @@ export const AlertDeleteComponent = ({ elementName, recipeId, authorId }: { elem
                     <AlertDialogCancel>Annuler</AlertDialogCancel>
                     <AlertDialogAction onClick={async () => {
 
-                        const deleteAction = await deleteRecipe(recipeId, authorId)
+                        const author = recipe.author
+                        const deleteAction = await deleteRecipe(recipe.id, authorId)
 
                         if (deleteAction?.status === "success") {
                             toast.success(deleteAction?.message)
-                            router.push('/admin/recipes')
+                            router.push(`/community/${author?.username}`)
                         } else {
                             toast.error(deleteAction?.message)
                         }
