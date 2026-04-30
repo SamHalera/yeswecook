@@ -1,40 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yes We Cook
+
+A full-stack recipe management application where users can create, manage, and share recipes. Recipes are organized by category (Entrées, Plats, Desserts, Apéros), support rich-text instructions, cover images, and can be published publicly or kept private. The app includes user authentication, community profiles, and an admin area.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router) + React 19 + TypeScript
+- **Database**: PostgreSQL (via Docker) + Prisma ORM
+- **Auth**: [Better Auth](https://www.better-auth.com/docs/introduction)
+- **Image upload**: [Cloudinary](https://cloudinary.com/documentation)
+- **Rich text editor**: TipTap
+- **UI**: Tailwind CSS v4, shadcn/ui (Radix UI), Lucide icons
+- **Forms & validation**: React Hook Form + Zod
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) v18+
+- [Docker](https://www.docker.com/) (for the PostgreSQL database)
+- A [Cloudinary](https://cloudinary.com/) account (free tier works)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd yeswecook
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file at the root of the project:
+
+```bash
+cp .env.example .env
+```
+
+`.env` template:
+
+```env
+# Auth
+BETTER_AUTH_SECRET=<generate-a-random-secret>
+BETTER_AUTH_URL=http://localhost:3000
+
+# Database (must match docker-compose values)
+DB_NAME=<your-db-name>
+DB_USER=<your-db-user>
+DB_PASSWORD=<your-db-password>
+DB_PORT=<your-db-port>
+
+# Prisma connection string
+# Port must match DB_PORT above (maps to the Docker container's internal 5432)
+DATABASE_URL="postgresql://<your-db-user>:<your-db-password>@localhost:<your-db-port>/<your-db-name>?schema=public"
+
+# Cloudinary
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=<your-cloud-name>
+NEXT_PUBLIC_CLOUDINARY_API_KEY=<your-api-key>
+NEXT_PUBLIC_CLOUDINARY_RECIP_PRESET=<your-recipe-upload-preset>
+NEXT_PUBLIC_CLOUDINARY_USER_PRESET=<your-user-upload-preset>
+CLOUDINARY_API_SECRET=<your-api-secret>
+```
+
+> To generate a `BETTER_AUTH_SECRET`, run: `openssl rand -hex 32`
+
+### 4. Start the database
+
+```bash
+docker-compose up -d
+```
+
+This spins up a PostgreSQL 15 container accessible on `localhost:5434`.
+
+### 5. Run database migrations
+
+```bash
+npx prisma migrate deploy
+```
+
+### 6. (Optional) Seed the database
+
+A seed file is available at `prisma/seed-data.json`. Use the in-app seed page at `/seed` once the app is running, or trigger it via the server action in `actions/seed/seed-action.ts`.
+
+### 7. Start the development server
 
 ```bash
 npm run dev
-
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
+| `npx prisma studio` | Open Prisma Studio (database GUI) |
+| `npx prisma migrate dev` | Create and apply a new migration |
 
-## Link to prisma studio
-[(https://console.prisma.io/cmhzfss1u0rslzzf2liapuvis/cmii0z58l0s4hzgea6dxzsshv/cmii0z58k0s4dzgeal7r6ujrf/studio)]
+## Project Structure
 
-# or 
-```bash
-npx prisma studio
 ```
-## Learn More
+yeswecook/
+├── app/                  # Next.js App Router pages
+│   ├── (private)/        # Protected routes (account, admin, seed)
+│   ├── auth/             # Sign-in / sign-up pages
+│   ├── explore-recipes/  # Public recipe browser
+│   ├── community/        # Community & user profiles
+│   └── [entrees|plats|desserts|aperos]/  # Recipe category pages
+├── components/           # React components by feature
+├── actions/              # Next.js Server Actions
+├── lib/                  # Auth, Prisma client, utilities, Zod schemas
+├── prisma/               # Prisma schema & migrations
+├── types/                # TypeScript type definitions
+└── docker-compose.yaml   # PostgreSQL service
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Cloudinary Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
+1. Create a free account at [cloudinary.com](https://cloudinary.com)
+2. In your dashboard, create two **unsigned upload presets**:
+   - One for recipe covers (e.g. `yeswecook_recipe_preset`)
+   - One for user avatars (e.g. `yeswecook_user_preset`)
+3. Add the preset names and your credentials to `.env`
