@@ -5,6 +5,7 @@ import { Book, Clock, Heart, Share2, Users, Utensils } from 'lucide-react';
 import { MetaItem } from './singleRecipeContent';
 import { RecipeProps } from '@/types/recipe';
 import Image from 'next/image';
+import Link from 'next/link';
 export const HeroPublicRecipePage = ({ isSaved, setIsSaved, recipe }: { isSaved: boolean; setIsSaved: React.Dispatch<SetStateAction<boolean>>; recipe: RecipeProps }) => {
 
     const authorProfileImage = recipe.author?.image ? recipe.author?.image : "https://lh3.googleusercontent.com/aida-public/AB6AXuDPkhifIfhBBuHivQRe_cFl4UIkZKQIOXWlgUW2xfSKGKJc4MSCGlN_iG1sOYfOCPE8iJ5KEhUFtd7YudCInOXwkUh4wZ_K34mKuPEy_egCdjJEPD1PGxNm6ODwviXYwFuB8c_6aSTM8Cvxy8P5mTE1U5em8su8DrumbxYmka6DxF0Ej3f7DSINuYVlfwsn1-b2j2_fiaBkWCUJiWKYFcCho_QR6HnD3HxFKl_WSvFJi96JGSTq5LfDbvWNse9BXiGnD6JSKXZmaw"
@@ -49,7 +50,8 @@ export const HeroPublicRecipePage = ({ isSaved, setIsSaved, recipe }: { isSaved:
                                     src={authorProfileImage} />
                             </div>
 
-                            <span className='text-primary font-semibold'>by {recipe.author?.name}</span></div>
+                            <Link href={`/community/${recipe.author?.username}`} className='text-primary font-semibold'>by {recipe.author?.name}</Link>
+                        </div>
                     </div>
 
                     <div className="flex flex-wrap gap-4 mt-10">
