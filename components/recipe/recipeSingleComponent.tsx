@@ -18,8 +18,6 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
 }) => {
     const [isEditMode, setIsEditMode] = useState<boolean>(false)
 
-    console.log("isEditMode==>", isEditMode)
-    console.log('recipe==>', recipe)
     return !isEditMode ? (
         <Card className="w-full max-w-lg mx-auto">
             <CardHeader>
@@ -34,11 +32,11 @@ export const RecipeSingleComponent = ({ recipe, dataIngredients }: {
                     <span className="flex items-center gap-2"><AlarmClockCheckIcon />cuisson : {recipe?.durationCook}</span>
 
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: recipe?.description }} />
+                <div dangerouslySetInnerHTML={{ __html: recipe?.instructions }} />
             </CardContent>
             <CardFooter className="flex justify-between gap-2 w-full">
                 <Button onClick={() => setIsEditMode(!isEditMode)} className="bg-green-300"><PencilIcon /> Modifier</Button>
-                <AlertDeleteComponent elementName="recette" recipeId={recipe.id} authorId={recipe.authorId} />
+                <AlertDeleteComponent elementName="recette" recipe={recipe} authorId={recipe.authorId} />
             </CardFooter>
         </Card>
     ) : (

@@ -29,6 +29,8 @@ import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import { AlertDeleteComponent } from '../globals/AlertDeleteComponent';
 import { Category } from '@/src/generated/prisma/enums';
+import { da } from 'zod/v4/locales';
+
 
 
 
@@ -59,6 +61,7 @@ export const CreateOrEditRecipeForm = (
     const [inputDisable, setIsEditMode] = useState<boolean>(true)
     const [isEditMode, setInputDisable] = useState<boolean>(false)
     const [isMediaGalleryUI, setIsMediaGalleryUI] = useState<boolean>(false)
+    const [isMediaError, setIsMediaError] = useState<boolean>(false)
     const [dataImage, setDataImage] = useState<RecipeMediaProps | null>(mediaCover ?? null);
 
     const router = useRouter()
@@ -68,18 +71,18 @@ export const CreateOrEditRecipeForm = (
             name: recipe?.name ?? "",
             durationPrep: recipe?.durationPrep ?? "",
             durationCook: recipe?.durationCook ?? "",
-            description: recipe?.description ?? "",
+            instructions: recipe?.instructions ?? "",
+            comment: recipe?.comment ?? "",
             nbOfPersons: recipe?.nbOfPersons ?? "4",
             category: recipe?.category ?? 'PLATS',
             ingredients: recipe?.ingredients ?? [],
-            isPublic: recipe?.isPublic
+            isPublic: recipe?.isPublic,
+            shortDescription: recipe?.shortDescription ?? ""
         }
     })
-
-
     const nameError = errors.name?.message
     const nbOfPersonsError = errors.nbOfPersons?.message
-    const descriptionError = errors.description?.message
+    const instructionsError = errors.instructions?.message
     const categoryError = errors.category?.message
     const durationPrepError = errors.durationPrep?.message
     const durationCookError = errors.durationCook?.message
@@ -92,27 +95,28 @@ export const CreateOrEditRecipeForm = (
 
     })
     const onSubmit: SubmitHandler<NewRecipeFormType> = async (values: z.infer<typeof NewRecipeSchema>) => {
-
         try {
-            console.log("onSubmit")
-            if (recipe) {
-                console.log("edit recipe")
-                const update = await updateRecipe(values, recipe.id)
-                if (update?.status === "success") {
-                    setIsEditMode(!isEditMode)
-                    toast.success(update.message)
-                    router.push(`/admin/recipes/`)
-                } else if (update?.status === "error") {
-                    toast.error(update?.message)
-                }
+            if (!dataImage) {
+                setIsMediaError(true)
+                toast.error("Chaque recette doit avoir une image !")
             } else {
-                console.log("CRETAION==>", values)
-                const creation = await createNewRecipeAction(values, dataImage)
-                if (creation?.status === "success") {
-                    toast.success(creation?.message)
-                    router.push('/admin/recipes')
+                if (recipe) {
+                    const update = await updateRecipe(values, recipe.id, dataImage)
+                    if (update?.status === "success") {
+                        setIsEditMode(!isEditMode)
+                        toast.success(update.message)
+                        router.push(`/community/${update.recipe?.author?.username}/`)
+                    } else if (update?.status === "error") {
+                        toast.error(update?.message)
+                    }
                 } else {
-                    toast.error(creation?.message)
+                    const creation = await createNewRecipeAction(values, dataImage)
+                    if (creation?.status === "success") {
+                        toast.success(creation?.message)
+                        router.push(`/community/${creation.recipe?.author?.username}/`)
+                    } else {
+                        toast.error(creation?.message)
+                    }
                 }
             }
         } catch (error) {
@@ -129,7 +133,6 @@ export const CreateOrEditRecipeForm = (
         quantity: "0",
         unity: "",
     }
-    console.log("errors==>", errors)
 
     return (
         <div className="flex flex-col gap-7 w-full">
@@ -164,14 +167,14 @@ export const CreateOrEditRecipeForm = (
 
                             <div className="flex flex-col gap-2 flex-1 mb-6">
                                 <div>
-                                    <Label id="unity" htmlFor="category" className="block text-[14px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Catégorie</Label>
+                                    <Label htmlFor="category" className="block text-[14px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Catégorie</Label>
                                     {categoryError && <span className="text-red-500 ml-2 italic text-sm">{categoryError}</span>}
                                 </div>
                                 <Select
                                     defaultValue={recipe?.category ?? undefined}
                                     onValueChange={(value) => setValue("category", value as Category)}
                                 >
-                                    <SelectTrigger className="w-full rounded-none h-10 bg-surface-container-low border-0 border-b-2 border-outline-variant/20 py-3 px-2 focus:ring-0 focus:border-primary transition-colors">
+                                    <SelectTrigger id="category" className="w-full rounded-none h-10 bg-surface-container-low border-0 border-b-2 border-outline-variant/20 py-3 px-2 focus:ring-0 focus:border-primary transition-colors">
                                         <SelectValue />
                                     </SelectTrigger>
                                     <SelectContent >
@@ -196,6 +199,32 @@ export const CreateOrEditRecipeForm = (
                                 </select> */}
                             </div>
                         </div>
+                        <div className="flex flex-col gap-4 w-full mb-4">
+                            <label htmlFor="shortDescription" className="block text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-4">Breve description </label>
+                            <Controller
+                                name="shortDescription"
+                                control={control}
+                                rules={{ required: 'Content is required' }}
+                                render={({ field }) => (
+                                    <Tiptap value={field.value ?? ""}
+                                        onChange={field.onChange} />
+
+                                )}
+                            />
+                        </div>
+                        <div className="flex flex-col gap-4 w-full mb-2 mt-4">
+                            <label htmlFor="comment" className="block text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-4">Breve commentaire </label>
+                            <Controller
+                                name="comment"
+                                control={control}
+                                rules={{ required: 'Content is required' }}
+                                render={({ field }) => (
+                                    <Tiptap value={field.value ?? ""}
+                                        onChange={field.onChange} />
+
+                                )}
+                            />
+                        </div>
 
                     </motion.div>
 
@@ -208,11 +237,11 @@ export const CreateOrEditRecipeForm = (
 
                         <div className="flex flex-col gap-2">
                             <div>
-                                <label htmlFor="description" className="block text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-4">Description </label>
-                                {descriptionError && <span className="text-red-500 ml-2 italic text-sm">{descriptionError}</span>}
+                                <label htmlFor="instructions" className="block text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-4">instructions</label>
+                                {instructionsError && <span className="text-red-500 ml-2 italic text-sm">{ingredientsError}</span>}
                             </div>
                             <Controller
-                                name="description"
+                                name="instructions"
                                 control={control}
                                 rules={{ required: 'Content is required' }}
                                 render={({ field }) => (
@@ -234,7 +263,6 @@ export const CreateOrEditRecipeForm = (
                         <AnimatePresence initial={false}>
                             {ingredientsError && <span className="text-red-500 ml-2 italic text-sm">{ingredientsError}</span>}
                             {fields.map((field, index) => {
-                                console.log("field==>", field)
                                 const errorsIngredients = Array.isArray(errors.ingredients) ? errors.ingredients : null
                                 return <motion.div
                                     key={field.id}
@@ -276,7 +304,7 @@ export const CreateOrEditRecipeForm = (
                         <div className="relative group overflow-hidden rounded-[2rem] aspect-[4/5] bg-surface-container-high border-2 border-dashed border-outline-variant/40 hover:border-primary transition-all duration-500">
                             <Trash size={1} onClick={() => {
                                 setDataImage(null)
-                            }} color="white" className=" cursor-pointer absolute right-4 top-4 h-12 w-12 bg-red-500 p-2 rounded-full" />
+                            }} color="white" className=" z-20 cursor-pointer absolute right-4 top-4 h-12 w-12 bg-red-500 p-2 rounded-full" />
                             <CldImage
                                 src={dataImage.source}
                                 alt={dataImage.caption ?? ""}
@@ -292,7 +320,6 @@ export const CreateOrEditRecipeForm = (
                     <CldUploadWidget
                         uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_RECIP_PRESET}
                         onSuccessAction={(result: any) => {
-                            console.log("result onsuccess upload=+>", result)
                             const media = {
                                 source: result?.info?.secure_url,
                                 publicId: result?.info.public_id,
@@ -389,17 +416,13 @@ export const CreateOrEditRecipeForm = (
                         </div>
                     </motion.div>
                     <div className="sticky top-32 space-y-5">
-                        <Button type="submit" disabled={!isDirty} className="w-full py-6 braise-gradient text-white font-headline font-extrabold text-xl rounded-md shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all hover:-translate-y-1 active:scale-95">Valider la recette</Button>
+                        <Button type="submit" disabled={!isDirty && dataImage === null} className="w-full py-6 braise-gradient text-white font-headline font-extrabold text-xl rounded-md shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all hover:-translate-y-1 active:scale-95">Valider la recette</Button>
                         <Button type="button" disabled={!isDirty} className="w-full py-5 bg-[#c5dada] text-on-surface font-headline font-extrabold rounded-md hover:bg-surface-container-highest transition-all active:scale-95">Enregistrer comme brouillon</Button>
-                        {recipe && <AlertDeleteComponent elementName="recette" recipeId={recipe.id} authorId={recipe.authorId} />}
+                        {recipe && <AlertDeleteComponent elementName="recette" recipe={recipe} authorId={recipe.authorId} />}
 
                     </div>
                 </aside>
                 {/* END RIGHT SIDE */}
-
-
-
-
 
             </form>
 

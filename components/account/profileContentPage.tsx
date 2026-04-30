@@ -11,9 +11,6 @@ import PreferencesForm from './prefercencesForm';
 export default function ProfileContentPage({ user }: { user: UserProps }) {
 
     const [active, setActive] = useState('Profile');
-    console.log("user==>", user)
-    console.log("ACTIVE ", active)
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}

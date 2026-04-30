@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-export const NavLinks = ({ showMyBook }: { showMyBook: boolean }) => {
+export const NavLinks = ({ showMyBook, user }: { showMyBook: boolean, user: UserProps }) => {
     const currentUrl = usePathname()
 
     return (
@@ -18,8 +18,8 @@ export const NavLinks = ({ showMyBook }: { showMyBook: boolean }) => {
             }, "hover:text-primary transition-colors pb-1 font-headline tracking-tight")} href="/explore-recipes">Explore</Link>
             {showMyBook && <Link className={cn({
                 "text-on-surface-variant": currentUrl !== "/admin/recipes",
-                "font-bold border-b-2 border-primary text-primary": currentUrl === "/admin/recipes",
-            }, " hover:text-primary transition-colors font-headline tracking-tight")} href="/admin/recipes">My Recipes</Link>}
+                "font-bold border-b-2 border-primary text-primary": currentUrl === `/community/${user?.username}`,
+            }, " hover:text-primary transition-colors font-headline tracking-tight")} href={`/community/${user?.username}`}>My Recipes</Link>}
 
             <Link className={cn({
                 "text-on-surface-variant": currentUrl !== "/community",

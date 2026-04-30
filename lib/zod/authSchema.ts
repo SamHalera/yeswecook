@@ -6,6 +6,7 @@ export const SignInSchema = z.object({
 })
 export const SignUpSchema = z.object({
     name: z.string({ message: "Champs obligatoire !" }),
+    username: z.string({ message: "Champs obligatoire !" }),
     email: z.string({ message: "Champs obligatoire !" }),
     password: z.string({ message: "Champs obligatoire !" })
 })

@@ -13,7 +13,6 @@ export default async function NewRecipePage() {
 
     if (!user) redirect(`/auth/sign-in?prevURL=${"admin/recipes/new"}`)
     const ingredients = await getIngredients()
-    console.log("ingredients in page")
 
     return (
         <div className="grow pt-10 pb-24 px-6 max-w-5xl mx-auto w-full">

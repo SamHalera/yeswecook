@@ -18,7 +18,6 @@ export const SignInForm = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
     const prevURL = searchParams.get('prevURL')
-    console.log("prevURL", prevURL)
     const redirectPath = prevURL ? `/${prevURL}` : '/admin/recipes'
     const form = useForm<z.infer<typeof SignInSchema>>({
         resolver: zodResolver(SignInSchema),
@@ -29,7 +28,6 @@ export const SignInForm = () => {
     })
 
     const onSubmit = async (values: z.infer<typeof SignInSchema>) => {
-        console.log("values from form==>", values)
         await signIn.email(
             {
                 email: values.email,

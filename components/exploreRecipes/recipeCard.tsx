@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark } from 'lucide-react';
+import { Bookmark, Timer } from 'lucide-react';
 import { motion } from 'motion/react';
 // import { Recipe } from '@/types';
 import { RecipeItemProps } from "@/types/recipe"
@@ -42,10 +42,10 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
 
                 <div className="flex items-center gap-4 mb-2">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-primary font-label">
-                        By {recipe.author.name}
+                        By {recipe.author?.name}
                     </span>
-                    {recipe.durationCook && <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant bg-[#E6F3FB] px-2 py-0.5 rounded font-label">
-                        {recipe.durationCook}
+                    {recipe.durationCook && <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant bg-[#E6F3FB] px-2 py-0.5 rounded font-label">
+                        <Timer className="w-4 h-4" />{recipe.durationCook} min
                     </span>}
 
                 </div>

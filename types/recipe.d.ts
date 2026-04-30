@@ -6,7 +6,8 @@ interface RecipeBase {
     durationPrep: string | null;
     durationCook: string | null;
     category: Category;
-    description: string;
+    instructions: string;
+    comment: string | null | undefined
     nbOfPersons: string;
     createdAt: Date;
     updatedAt: Date;
@@ -14,24 +15,17 @@ interface RecipeBase {
     authorId: string,
     cover: RecipeMediaProps | null
     isPublic: boolean
+    shortDescription?: string | null
+    author: UserProps
 }
 interface RecipeProps extends RecipeBase {
-    ingredients: {
-        ingredient: {
-            name?: string | null;
-            newName?: string | null;
-        };
-        quantity: string;
-        unity: string;
-    }[]
+    ingredients: RecipeIngredient[]
 }
+
 interface RecipeItemProps extends RecipeBase {
-    author: {
-        name: string
-        email: string
-        image: string | null
-    }
+    author: UserProps
 }
+
 
 type RecipeMediaProps = {
     source: string,
@@ -39,3 +33,11 @@ type RecipeMediaProps = {
     caption?: string | null
 }
 
+type RecipeIngredient = {
+    ingredient: {
+        name?: string | null;
+        newName?: string | null;
+    };
+    quantity: string;
+    unity: string;
+}

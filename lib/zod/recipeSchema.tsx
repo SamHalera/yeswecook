@@ -21,12 +21,14 @@ export const NewRecipeSchema = z.object({
         .min(1, "Le nom ne peut pas être vide"),
     durationPrep: z.string().optional(),
     durationCook: z.string().optional(),
+    shortDescription: z.string().optional().nullable(),
+    comment: z.string().optional().nullable(),
     isPublic: z.boolean(),
     nbOfPersons: z.string().refine((val) => !isNaN(parseFloat(val)), { error: "La quantité doit être un nombre" }),
     category: z.enum(Category, {
         error: "La catégorie est obligatoire",
     }),
-    description: z.string({
+    instructions: z.string({
         error: "Description obligatoire"
     }).min(1, "La description ne peut pas être vide"),
     ingredients: z

@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { Button, buttonVariants } from "../ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu"
-// import { DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { CookingPot, LogOut, User2 } from "lucide-react"
 import { auth } from "@/lib/auth"
@@ -29,7 +28,7 @@ export const Navbar = async ({ currentUrl, user }: { currentUrl: string | null, 
         <nav className="glass-nav border-b border-outline-variant/10">
             <div className="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
                 <Link href={"/"} className="text-2xl font-bold text-primary font-headline tracking-tight">YesWeCook</Link>
-                <NavLinks showMyBook={showMyBook} />
+                <NavLinks showMyBook={showMyBook} user={user} />
                 {!user ? (
                     <div className="flex gap-3">
                         <Link href={"/auth/sign-in"} className="text-on-surface-variant hover:text-primary transition-colors font-headline tracking-tight">Sign In</Link>
@@ -75,7 +74,7 @@ export const AuthButton = async () => {
                                     width={48}
                                     height={48}
                                     alt="User profile avatar"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPkhifIfhBBuHivQRe_cFl4UIkZKQIOXWlgUW2xfSKGKJc4MSCGlN_iG1sOYfOCPE8iJ5KEhUFtd7YudCInOXwkUh4wZ_K34mKuPEy_egCdjJEPD1PGxNm6ODwviXYwFuB8c_6aSTM8Cvxy8P5mTE1U5em8su8DrumbxYmka6DxF0Ej3f7DSINuYVlfwsn1-b2j2_fiaBkWCUJiWKYFcCho_QR6HnD3HxFKl_WSvFJi96JGSTq5LfDbvWNse9BXiGnD6JSKXZmaw" />
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWca-3b5zO39YPa6ll7x18rQQGd5EsyzKoUhJpxt-tFBW4LJUggcE4JFLJV4wnGXGTu6PivQv-_CmicGOxJJwWRN9eEI3YIGS9Z94aXF_lNBDIyR33NCwB9e0wPuddBwZiYrH2UdkvChXOujDXs7u8enlj7ym8M4vIl96yGQ4tCZCARVQr0OYWWlxeO7fr9MjySBrSllQKgj5tW6mvgE1u_bKvtv2UX4qcKNlmCVqtI2N7ZzM4HpKnqPCRxJq7-toM9XZ-nmnKHw" />
                             </div>
                         }
                         {/* {user.user.image ? <AvatarImage src={user.user.image} /> : <div
@@ -92,7 +91,7 @@ export const AuthButton = async () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="flex flex-col gap-2 bg-surface-container-low p-4 border-b-2 border-b-primary rounded text-primary font-semibold">
                 <DropdownMenuItem>
-                    <Link href={"/admin/recipes"} className="flex items-center gap-2">
+                    <Link href={`/community/${user.username}`} className="flex items-center gap-2">
                         <User2 className="size-5 text-primary" />
                         Mes Recettes (Admin)
                     </Link>
@@ -115,8 +114,6 @@ export const AuthButton = async () => {
                         await auth.api.signOut({
                             headers: await headers()
                         });
-                        console.log("REDIRECT");
-
                         redirect("/")
                     }}>
                         <button type="submit" className="flex items-center gap-2 w-full">

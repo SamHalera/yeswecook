@@ -20,23 +20,24 @@ export const SignUpForm = () => {
         defaultValues: {
             name: "",
             email: "",
-            password: ""
+            password: "",
+            username: ""
         }
     })
 
     const router = useRouter()
 
     const onSubmit = async (values: z.infer<typeof SignUpSchema>) => {
-        console.log("values from form==>", values)
         await signUp.email(
             {
                 name: values.name,
                 email: values.email,
-                password: values.password
+                password: values.password,
+                username: values.username
             },
             {
                 onSuccess: () => {
-                    router.push('/admin/recipes')
+                    router.push(`/community/${values.username}`)
                     router.refresh()
                 },
                 onError: (error) => {
@@ -54,9 +55,23 @@ export const SignUpForm = () => {
                     name="name"
                     render={({ field }) => (
                         <FormItem>
+                            <FormLabel>Name</FormLabel>
+                            <FormControl>
+                                <Input type="text" placeholder="Mario Rossi" {...field} />
+                            </FormControl>
+
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="username"
+                    render={({ field }) => (
+                        <FormItem>
                             <FormLabel>Username</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="email@gmail.com" {...field} />
+                                <Input type="text" placeholder="mister-chef" {...field} />
                             </FormControl>
 
                             <FormMessage />

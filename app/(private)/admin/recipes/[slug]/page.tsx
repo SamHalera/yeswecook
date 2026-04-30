@@ -15,7 +15,6 @@ export default async function RecipePage({ params }: { params: Promise<{ slug: s
 
     if (!user) return unauthorized()
     const { slug } = await params
-    console.log("params", slug)
     const recipe = await prisma.recipe.findUnique({
         where: {
             slug: slug
@@ -26,11 +25,10 @@ export default async function RecipePage({ params }: { params: Promise<{ slug: s
                     ingredient: true
                 }
             },
-            cover: true
+            cover: true,
+            author: true
         }
     })
-
-    console.log("recipe==>", recipe)
     const ingredients = await getIngredients()
 
     if (!recipe) notFound()

@@ -7,7 +7,6 @@ import { RecipeItemProps } from "@/types/recipe"
 
 export const RecipeItem = ({ recipe, isCurrentUserAuthor }: { recipe: RecipeItemProps, isCurrentUserAuthor: boolean }) => {
     const path = usePathname()
-    console.log("path", path)
 
     const currentPath = path === "/" ? `/${recipe.category.toLowerCase()}` : path
     return (
@@ -25,7 +24,7 @@ export const RecipeItem = ({ recipe, isCurrentUserAuthor }: { recipe: RecipeItem
                         <span className="flex items-center gap-2"><AlarmClockCheckIcon />cuisson : {recipe?.durationCook}</span>
                     </div>
                 </CardContent>
-                <CardFooter>{isCurrentUserAuthor ? "Moi" : recipe.author.name}</CardFooter>
+                <CardFooter>{isCurrentUserAuthor ? "Moi" : recipe.author?.name}</CardFooter>
             </Card>
         </Link>
     )

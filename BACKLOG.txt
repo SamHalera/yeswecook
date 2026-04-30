@@ -1,0 +1,27 @@
+MAQUETTES : 
+HOME --> OK
+EXPLORE RECIPES ---> OK
+ONE RECIPE --> OK
+COMMUNITY --> OK
+SIGNIN --> OK
+SIGNUP --> OK
+MY RECIPES --> OK
+
+CRUD RECETTE --> OK
+CATEGORY RECIPES PAGE
+PAGE UNAUTHORIZED --> OK
+PAGE 404 --> OK
+ACCOUNT :
+    - Profile --> OK
+    - Notifications --> ?
+    - Privacy --> ?
+    - Préférences --> ?
+
+FEATURES : 
+- BLOG
+- SETUP NOTIFICATIONS
+- SETUP Privacy
+- SETUP Preferences
+- SEARCH RECIPE (FILTERS AND TAG)
+- RECIPE FAVORITE
+- RECIPE INSTRUCTIONS FROM TEXT TO STEPS (each step has max 3 photos)

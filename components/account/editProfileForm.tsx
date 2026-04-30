@@ -34,9 +34,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
 
 
     const onSubmit = async (values: z.infer<typeof ProfileFormSchema>) => {
-        console.log("values from form==>", values)
-
-
         const { data, error } = await authClient.updateUser({
             name: values.name,
             bio: values.bio,
@@ -45,7 +42,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                 imageSrc: dataImage.imageSrc,
                 image: dataImage.imageSrc
             })
-
         })
 
         if (user?.email !== values.email) {
@@ -62,7 +58,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                 }
             }, 700)
         }
-        console.log("data==>", data)
         if (error) {
             toast.error(error.message)
         } else if (data.status === true) {
@@ -76,9 +71,9 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
             <div className="flex flex-col md:flex-row gap-12 items-start">
                 <div className="relative group shrink-0">
                     <div className="w-32 h-32 rounded-full overflow-hidden bg-surface-container-high border-4 border-surface-container-lowest shadow-xl ring-8 ring-on-surface/5">
-                        {dataImage ? (
+                        {dataImage?.imageSrc ? (
                             <CldImage
-                                src={dataImage?.imageSrc ?? ''}
+                                src={dataImage.imageSrc}
                                 alt={"image de profile"}
                                 width="450"
                                 height="450"
@@ -99,7 +94,6 @@ export const EditProfileForm = ({ user }: { user: UserProps }) => {
                         <CldUploadWidget
                             uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_USER_PRESET}
                             onSuccessAction={(result: any) => {
-                                console.log("result onsuccess upload=+>", result)
                                 const userImage = {
                                     imageSrc: result?.info?.secure_url,
                                     imagePublicId: result?.info.public_id,
